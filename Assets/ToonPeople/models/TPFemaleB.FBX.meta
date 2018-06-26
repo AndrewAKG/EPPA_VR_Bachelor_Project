@@ -1,0 +1,1117 @@
+fileFormatVersion: 2
+guid: 4199d1efae4fb8042899d5560d42842b
+timeCreated: 1517442728
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: glasses
+    100002: ROOT
+    100004: TP
+    100006: TP Eyebrows
+    100008: TP EyeL
+    100010: TP EyeR
+    100012: TP Head
+    100014: TP Jaw
+    100016: TP L Calf
+    100018: TP L Clavicle
+    100020: TP L Finger0
+    100022: TP L Finger01
+    100024: TP L Finger02
+    100026: TP L Finger1
+    100028: TP L Finger11
+    100030: TP L Finger12
+    100032: TP L Finger2
+    100034: TP L Finger21
+    100036: TP L Finger22
+    100038: TP L Finger3
+    100040: TP L Finger31
+    100042: TP L Finger32
+    100044: TP L Finger4
+    100046: TP L Finger41
+    100048: TP L Finger42
+    100050: TP L Foot
+    100052: TP L Forearm
+    100054: TP L Hand
+    100056: TP L Thigh
+    100058: TP L Toe0
+    100060: TP L UpperArm
+    100062: TP LidL
+    100064: TP LidR
+    100066: TP Neck
+    100068: TP Pelvis
+    100070: TP R Calf
+    100072: TP R Clavicle
+    100074: TP R Finger0
+    100076: TP R Finger01
+    100078: TP R Finger02
+    100080: TP R Finger1
+    100082: TP R Finger11
+    100084: TP R Finger12
+    100086: TP R Finger2
+    100088: TP R Finger21
+    100090: TP R Finger22
+    100092: TP R Finger3
+    100094: TP R Finger31
+    100096: TP R Finger32
+    100098: TP R Finger4
+    100100: TP R Finger41
+    100102: TP R Finger42
+    100104: TP R Foot
+    100106: TP R Forearm
+    100108: TP R Hand
+    100110: TP R Thigh
+    100112: TP R Toe0
+    100114: TP R UpperArm
+    100116: TP Smile
+    100118: TP Spine
+    100120: TP Spine1
+    100122: TP Spine2
+    100124: TPBowtie
+    100126: TPFemaleB
+    100128: //RootNode
+    100130: TPFHairA
+    100132: TPFHairB
+    100134: TPFHairC
+    100136: TPFHairD
+    100138: TPFHairE
+    100140: TPFHairF
+    100142: TPFDressL
+    100144: TPFDressS001
+    100146: TPFFeetA001
+    100148: TPFFeetB001
+    100150: TPFFeetC001
+    100152: TPFLeggings001
+    100154: TPFLegsL001
+    100156: TPFLegsS001
+    100158: TPFShirtAL001
+    100160: TPFShirtAS001
+    100162: TPFShirtBL001
+    100164: TPFShirtBS001
+    100166: TPFSkirt001
+    100168: TPFSuit001
+    100170: TPFSweater001
+    100172: TPFTieL001
+    100174: TPFTieS001
+    100176: TPFTshirtB001
+    100178: TPFTshirtL001
+    100180: TPFTshirtS001
+    100182: TPFDressS
+    100184: TPFFeetA
+    100186: TPFFeetB
+    100188: TPFFeetC
+    100190: TPFLeggings
+    100192: TPFLegsL
+    100194: TPFLegsS
+    100196: TPFShirtAL
+    100198: TPFShirtAS
+    100200: TPFShirtBL
+    100202: TPFShirtBS
+    100204: TPFSkirt
+    100206: TPFSuit
+    100208: TPFSweater
+    100210: TPFTieL
+    100212: TPFTieS
+    100214: TPFTshirtB
+    100216: TPFTshirtL
+    100218: TPFTshirtS
+    100220: TPGlasses
+    400000: glasses
+    400002: ROOT
+    400004: TP
+    400006: TP Eyebrows
+    400008: TP EyeL
+    400010: TP EyeR
+    400012: TP Head
+    400014: TP Jaw
+    400016: TP L Calf
+    400018: TP L Clavicle
+    400020: TP L Finger0
+    400022: TP L Finger01
+    400024: TP L Finger02
+    400026: TP L Finger1
+    400028: TP L Finger11
+    400030: TP L Finger12
+    400032: TP L Finger2
+    400034: TP L Finger21
+    400036: TP L Finger22
+    400038: TP L Finger3
+    400040: TP L Finger31
+    400042: TP L Finger32
+    400044: TP L Finger4
+    400046: TP L Finger41
+    400048: TP L Finger42
+    400050: TP L Foot
+    400052: TP L Forearm
+    400054: TP L Hand
+    400056: TP L Thigh
+    400058: TP L Toe0
+    400060: TP L UpperArm
+    400062: TP LidL
+    400064: TP LidR
+    400066: TP Neck
+    400068: TP Pelvis
+    400070: TP R Calf
+    400072: TP R Clavicle
+    400074: TP R Finger0
+    400076: TP R Finger01
+    400078: TP R Finger02
+    400080: TP R Finger1
+    400082: TP R Finger11
+    400084: TP R Finger12
+    400086: TP R Finger2
+    400088: TP R Finger21
+    400090: TP R Finger22
+    400092: TP R Finger3
+    400094: TP R Finger31
+    400096: TP R Finger32
+    400098: TP R Finger4
+    400100: TP R Finger41
+    400102: TP R Finger42
+    400104: TP R Foot
+    400106: TP R Forearm
+    400108: TP R Hand
+    400110: TP R Thigh
+    400112: TP R Toe0
+    400114: TP R UpperArm
+    400116: TP Smile
+    400118: TP Spine
+    400120: TP Spine1
+    400122: TP Spine2
+    400124: TPBowtie
+    400126: TPFemaleB
+    400128: //RootNode
+    400130: TPFHairA
+    400132: TPFHairB
+    400134: TPFHairC
+    400136: TPFHairD
+    400138: TPFHairE
+    400140: TPFHairF
+    400142: TPFDressL
+    400144: TPFDressS001
+    400146: TPFFeetA001
+    400148: TPFFeetB001
+    400150: TPFFeetC001
+    400152: TPFLeggings001
+    400154: TPFLegsL001
+    400156: TPFLegsS001
+    400158: TPFShirtAL001
+    400160: TPFShirtAS001
+    400162: TPFShirtBL001
+    400164: TPFShirtBS001
+    400166: TPFSkirt001
+    400168: TPFSuit001
+    400170: TPFSweater001
+    400172: TPFTieL001
+    400174: TPFTieS001
+    400176: TPFTshirtB001
+    400178: TPFTshirtL001
+    400180: TPFTshirtS001
+    400182: TPFDressS
+    400184: TPFFeetA
+    400186: TPFFeetB
+    400188: TPFFeetC
+    400190: TPFLeggings
+    400192: TPFLegsL
+    400194: TPFLegsS
+    400196: TPFShirtAL
+    400198: TPFShirtAS
+    400200: TPFShirtBL
+    400202: TPFShirtBS
+    400204: TPFSkirt
+    400206: TPFSuit
+    400208: TPFSweater
+    400210: TPFTieL
+    400212: TPFTieS
+    400214: TPFTshirtB
+    400216: TPFTshirtL
+    400218: TPFTshirtS
+    400220: TPGlasses
+    2300000: glasses
+    2300002: TPBowtie
+    2300004: TPFHairA
+    2300006: TPFHairB
+    2300008: TPFHairC
+    2300010: TPFHairD
+    2300012: TPFHairE
+    2300014: TPFHairF
+    2300016: TPGlasses
+    3300000: glasses
+    3300002: TPBowtie
+    3300004: TPFHairA
+    3300006: TPFHairB
+    3300008: TPFHairC
+    3300010: TPFHairD
+    3300012: TPFHairE
+    3300014: TPFHairF
+    3300016: TPGlasses
+    4300000: TPFHairF
+    4300002: TPFHairC
+    4300004: glasses
+    4300006: TPFHairA
+    4300008: TPFHairB
+    4300010: TPFHairD
+    4300012: TPFHairE
+    4300014: TPBowtie
+    4300016: TPFemaleB
+    4300018: TPFLeggings001
+    4300020: TPFTieL001
+    4300022: TPFTieS001
+    4300024: TPFLegsL001
+    4300026: TPFLegsS001
+    4300028: TPFFeetA001
+    4300030: TPFSuit001
+    4300032: TPFSweater001
+    4300034: TPFFeetC001
+    4300036: TPFFeetB001
+    4300038: TPFSkirt001
+    4300040: TPFTshirtB001
+    4300042: TPFShirtAS001
+    4300044: TPFShirtBL001
+    4300046: TPFTshirtL001
+    4300048: TPFTshirtS001
+    4300050: TPFShirtAL001
+    4300052: TPFShirtBS001
+    4300054: TPFDressS001
+    4300056: TPFDressL
+    4300058: TPFLeggings
+    4300060: TPFTieL
+    4300062: TPFTieS
+    4300064: TPFLegsL
+    4300066: TPFLegsS
+    4300068: TPFFeetA
+    4300070: TPFSuit
+    4300072: TPFSweater
+    4300074: TPFFeetC
+    4300076: TPFFeetB
+    4300078: TPFSkirt
+    4300080: TPFTshirtB
+    4300082: TPFShirtAS
+    4300084: TPFShirtBL
+    4300086: TPFTshirtL
+    4300088: TPFTshirtS
+    4300090: TPFShirtAL
+    4300092: TPFShirtBS
+    4300094: TPFDressS
+    4300096: TPGlasses
+    9500000: //RootNode
+    13700000: TPFemaleB
+    13700002: TPFDressL
+    13700004: TPFDressS001
+    13700006: TPFFeetA001
+    13700008: TPFFeetB001
+    13700010: TPFFeetC001
+    13700012: TPFLeggings001
+    13700014: TPFLegsL001
+    13700016: TPFLegsS001
+    13700018: TPFShirtAL001
+    13700020: TPFShirtAS001
+    13700022: TPFShirtBL001
+    13700024: TPFShirtBS001
+    13700026: TPFSkirt001
+    13700028: TPFSuit001
+    13700030: TPFSweater001
+    13700032: TPFTieL001
+    13700034: TPFTieS001
+    13700036: TPFTshirtB001
+    13700038: TPFTshirtL001
+    13700040: TPFTshirtS001
+    13700042: TPFDressS
+    13700044: TPFFeetA
+    13700046: TPFFeetB
+    13700048: TPFFeetC
+    13700050: TPFLeggings
+    13700052: TPFLegsL
+    13700054: TPFLegsS
+    13700056: TPFShirtAL
+    13700058: TPFShirtAS
+    13700060: TPFShirtBL
+    13700062: TPFShirtBS
+    13700064: TPFSkirt
+    13700066: TPFSuit
+    13700068: TPFSweater
+    13700070: TPFTieL
+    13700072: TPFTieS
+    13700074: TPFTshirtB
+    13700076: TPFTshirtL
+    13700078: TPFTshirtS
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 1
+  humanDescription:
+    human:
+    - boneName: TP Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Toe0
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Toe0
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger0
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger01
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger02
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger11
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger12
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger2
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger21
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger22
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger3
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger31
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger32
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger4
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger41
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP L Finger42
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger0
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger01
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger02
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger11
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger12
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger2
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger21
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger22
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger3
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger31
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger32
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger4
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger41
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: TP R Finger42
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: TPFAvatar(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ROOT
+      position: {x: 0, y: 0, z: 1.90734859e-08}
+      rotation: {x: -5.96244032e-09, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP
+      position: {x: -0, y: .808740139, z: -1.94293577e-08}
+      rotation: {x: -.500000358, y: .499999642, z: .499999642, w: .500000358}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP Pelvis
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.5, y: .5, z: .499999315, w: .500000715}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L Thigh
+      position: {x: 1.52587887e-07, y: 1.49795824e-07, z: .0825242698}
+      rotation: {x: -.000276000035, y: 1, z: -6.93196739e-07, w: -7.37302855e-07}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L Calf
+      position: {x: -.35973084, y: -3.72529022e-11, z: 0}
+      rotation: {x: 1.50353227e-14, y: -3.54335672e-15, z: .000622391759, w: .999999821}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: TP L Foot
+      position: {x: -.35973084, y: 1.86264511e-11, z: 9.53674295e-09}
+      rotation: {x: -1.51422191e-11, y: -4.37113847e-08, z: -.000346369896, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L Toe0
+      position: {x: -.0892785788, y: .0967155024, z: 0}
+      rotation: {x: 9.26087867e-22, y: 9.26087867e-22, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP R Thigh
+      position: {x: -1.52587887e-07, y: -7.90935317e-08, z: -.0825242698}
+      rotation: {x: -.000276000035, y: 1, z: -6.93196739e-07, w: -7.37302855e-07}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP R Calf
+      position: {x: -.35973084, y: 0, z: 0}
+      rotation: {x: 1.50353227e-14, y: -3.54335672e-15, z: .000622391759, w: .999999821}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: TP R Foot
+      position: {x: -.35973084, y: 2.79396766e-11, z: 9.53674295e-09}
+      rotation: {x: -1.51422191e-11, y: -4.37113847e-08, z: -.000346369896, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP R Toe0
+      position: {x: -.0892785788, y: .0967155024, z: 0}
+      rotation: {x: 9.26087867e-22, y: 9.26087867e-22, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP Spine
+      position: {x: -.094902873, y: -.000113861221, z: 1.31769184e-07}
+      rotation: {x: -2.08047595e-06, y: 6.93676043e-07, z: -.000398159027, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP Spine1
+      position: {x: -.143042147, y: -.000113900751, z: -3.159151e-10}
+      rotation: {x: -3.01175643e-14, y: -1.11022302e-16, z: -3.34372133e-30, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP Spine2
+      position: {x: -.143041909, y: -.000113900671, z: -3.15915238e-10}
+      rotation: {x: -3.01175643e-14, y: -1.11022302e-16, z: -3.34372133e-30, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L Clavicle
+      position: {x: -.0548680872, y: -.020230744, z: .0362303406}
+      rotation: {x: -.707106709, y: -.000282522, z: .707106769, w: -.00028056078}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L UpperArm
+      position: {x: -.0778737068, y: 0, z: 0}
+      rotation: {x: 4.37113599e-08, y: 2.18557545e-08, z: -1.41421333e-06, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L Forearm
+      position: {x: -.22349304, y: 0, z: 0}
+      rotation: {x: -1.777146e-26, y: 9.31736242e-21, z: 1.90734886e-06, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L Hand
+      position: {x: -.22349304, y: -2.38418574e-09, z: 0}
+      rotation: {x: -.707106709, y: 2.82955284e-06, z: 2.8273007e-06, w: .707106888}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L Finger0
+      position: {x: -.0206938051, y: .00044094937, z: -.0375166051}
+      rotation: {x: .653279006, y: -.270603657, z: .270599335, w: .653281212}
+      scale: {x: 1.00000036, y: .999999642, z: 1.00000012}
+      transformModified: 1
+    - name: TP L Finger01
+      position: {x: -.0509030148, y: 7.62939436e-08, z: 1.19209287e-09}
+      rotation: {x: 2.95654434e-08, y: 4.55395543e-09, z: -.000233997518, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L Finger02
+      position: {x: -.0270699691, y: 0, z: 0}
+      rotation: {x: -2.36588388e-10, y: -2.94091818e-09, z: -.000233997504, w: 1}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: TP L Finger1
+      position: {x: -.0846117735, y: -.00114006037, z: -.0333691016}
+      rotation: {x: -.00045915402, y: 8.85868161e-08, z: -.000225968892, w: .999999881}
+      scale: {x: 1.00000012, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: TP L Finger11
+      position: {x: -.027670363, y: 0, z: -3.57627861e-09}
+      rotation: {x: -3.78104579e-12, y: -1.61583102e-08, z: -.000234000065, w: 1}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: TP L Finger12
+      position: {x: -.027670363, y: 7.62939436e-08, z: 3.57627861e-09}
+      rotation: {x: -5.67584243e-11, y: 6.19333074e-09, z: -.000233999905, w: 1}
+      scale: {x: 1.00000012, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: TP L Finger2
+      position: {x: -.0889020935, y: -.00379043561, z: -.00669117458}
+      rotation: {x: -.000418334588, y: 3.95368886e-07, z: -.000233341241, w: .999999881}
+      scale: {x: 1.00000036, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: TP L Finger21
+      position: {x: -.0276829526, y: 7.62939436e-08, z: 0}
+      rotation: {x: -4.0577795e-13, y: -1.73409387e-09, z: -.000233999992, w: 1}
+      scale: {x: .99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L Finger22
+      position: {x: -.0276828762, y: -7.62939436e-08, z: 0}
+      rotation: {x: 4.65946509e-13, y: 1.99122496e-09, z: -.000233999934, w: 1}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: TP L Finger3
+      position: {x: -.0860908851, y: .00060279842, z: .0186213069}
+      rotation: {x: -.000377939694, y: -5.78907077e-07, z: -.000233340877, w: .99999994}
+      scale: {x: 1.00000036, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: TP L Finger31
+      position: {x: -.0279438775, y: 0, z: 0}
+      rotation: {x: -5.78069363e-11, y: 1.71253522e-09, z: -.000233999963, w: 1}
+      scale: {x: 1, y: .999999881, z: 1}
+      transformModified: 1
+    - name: TP L Finger32
+      position: {x: -.0279440302, y: 0, z: -2.38418574e-09}
+      rotation: {x: 2.95045481e-11, y: 1.71245795e-09, z: -.000233999934, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP L Finger4
+      position: {x: -.0797254518, y: .0149581144, z: .0356707238}
+      rotation: {x: -.000317820959, y: -1.98759849e-07, z: -.000219386056, w: .99999994}
+      scale: {x: 1.00000036, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: TP L Finger41
+      position: {x: -.02501297, y: 0, z: 0}
+      rotation: {x: 3.40594089e-12, y: 1.45553001e-08, z: -.000234000036, w: 1}
+      scale: {x: .999999821, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: TP L Finger42
+      position: {x: -.02501297, y: 7.62939436e-08, z: 0}
+      rotation: {x: 3.25097553e-11, y: 1.45552326e-08, z: -.00023399989, w: 1}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: TP Neck
+      position: {x: -.103314668, y: -.0166817233, z: -2.62684274e-08}
+      rotation: {x: -3.01175643e-14, y: -1.11022302e-16, z: -3.34372133e-30, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP Head
+      position: {x: -.0532109067, y: 0, z: 0}
+      rotation: {x: -1.58125449e-14, y: -1.10427345e-09, z: .000398830569, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP Eyebrows
+      position: {x: -.200735778, y: .0106601454, z: 8.1014781e-07}
+      rotation: {x: -4.20451443e-06, y: 2.99121581e-08, z: -.511147618, w: .859492958}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: TP EyeL
+      position: {x: -.186887056, y: .0440715291, z: .0158764143}
+      rotation: {x: .759098768, y: -.635928869, z: -.106537156, w: -.0895176902}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: TP EyeR
+      position: {x: -.186887354, y: .0440715551, z: -.0158763006}
+      rotation: {x: .75909549, y: -.635929108, z: .106539518, w: .0895415395}
+      scale: {x: .99999994, y: 1, z: .999999881}
+      transformModified: 1
+    - name: TP Jaw
+      position: {x: -.115784906, y: .0208527911, z: 5.08286178e-07}
+      rotation: {x: -4.01191619e-06, y: 1.26278667e-06, z: -.782503903, w: .622645676}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP Smile
+      position: {x: -.0251853745, y: -6.27136251e-05, z: 1.50693808e-07}
+      rotation: {x: -2.941807e-06, y: -6.19470626e-08, z: 5.96044707e-08, w: 1}
+      scale: {x: .999999881, y: .999999881, z: 1}
+      transformModified: 1
+    - name: TP LidL
+      position: {x: -.186887205, y: .0440715216, z: .0158764198}
+      rotation: {x: .78659749, y: -.601587713, z: -.10244821, w: -.0941329375}
+      scale: {x: 1, y: .99999994, z: .999999881}
+      transformModified: 1
+    - name: TP LidR
+      position: {x: -.186887354, y: .044071544, z: -.0158763044}
+      rotation: {x: .786113918, y: -.602214098, z: .102520019, w: .0940899923}
+      scale: {x: 1, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: TP R Clavicle
+      position: {x: -.0548680872, y: -.0202305429, z: -.0362304561}
+      rotation: {x: .707106709, y: .000280560052, z: .707106769, w: -.000282521301}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP R UpperArm
+      position: {x: -.0778737068, y: 0, z: 0}
+      rotation: {x: -4.37113599e-08, y: -2.18557563e-08, z: -1.41421322e-06, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP R Forearm
+      position: {x: -.223493069, y: 2.38418574e-09, z: 0}
+      rotation: {x: 0, y: 0, z: 1.90734863e-06, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP R Hand
+      position: {x: -.22349304, y: 0, z: 0}
+      rotation: {x: .707106709, y: -2.82955284e-06, z: 2.8273007e-06, w: .707106888}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP R Finger0
+      position: {x: -.0206937753, y: .000440895179, z: .0375204682}
+      rotation: {x: -.653279006, y: .270605385, z: .270597249, w: .653281331}
+      scale: {x: 1.00000036, y: .999999642, z: 1.00000012}
+      transformModified: 1
+    - name: TP R Finger01
+      position: {x: -.0509030521, y: 7.62939436e-08, z: -1.19209287e-09}
+      rotation: {x: -2.89239068e-08, y: -4.55392746e-09, z: -.000233997518, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP R Finger02
+      position: {x: -.0270700064, y: 0, z: 1.19209287e-09}
+      rotation: {x: 8.78208506e-10, y: 2.94092861e-09, z: -.000233997504, w: 1}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: TP R Finger1
+      position: {x: -.0846117362, y: -.00114006037, z: .0333691016}
+      rotation: {x: .00045915402, y: -7.36857899e-08, z: -.000225968892, w: .999999881}
+      scale: {x: 1.00000012, y: 1, z: 1.00000024}
+      transformModified: 1
+    - name: TP R Finger11
+      position: {x: -.027670363, y: 0, z: 0}
+      rotation: {x: -5.79133894e-11, y: 1.25758903e-09, z: -.000234000036, w: 1}
+      scale: {x: .99999994, y: .99999994, z: .999999881}
+      transformModified: 1
+    - name: TP R Finger12
+      position: {x: -.027670363, y: 7.62939436e-08, z: 1.19209287e-09}
+      rotation: {x: 1.44070075e-10, y: -6.19272633e-09, z: -.000233999934, w: 1}
+      scale: {x: 1, y: .99999994, z: 1}
+      transformModified: 1
+    - name: TP R Finger2
+      position: {x: -.0889021307, y: -.00379043561, z: .00669117318}
+      rotation: {x: .000418334588, y: -3.95369341e-07, z: -.000233341241, w: .999999881}
+      scale: {x: 1.00000036, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: TP R Finger21
+      position: {x: -.0276829526, y: 7.62939436e-08, z: 2.38418574e-09}
+      rotation: {x: 4.05871056e-13, y: 1.73449177e-09, z: -.000233999992, w: 1}
+      scale: {x: .99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: TP R Finger22
+      position: {x: -.0276828762, y: -7.62939436e-08, z: 0}
+      rotation: {x: 4.05930823e-13, y: 1.73474746e-09, z: -.000233999963, w: 1}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: TP R Finger3
+      position: {x: -.0860909224, y: .00060279842, z: -.0186213031}
+      rotation: {x: .000377939694, y: 5.78906622e-07, z: -.000233340877, w: .99999994}
+      scale: {x: 1.00000036, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: TP R Finger31
+      position: {x: -.0279438775, y: 0, z: 2.38418574e-09}
+      rotation: {x: 2.87032099e-11, y: -1.71207371e-09, z: -.000233999963, w: 1}
+      scale: {x: 1, y: .999999881, z: 1}
+      transformModified: 1
+    - name: TP R Finger32
+      position: {x: -.0279440302, y: 0, z: -2.38418574e-09}
+      rotation: {x: 4.71213888e-13, y: 2.01373496e-09, z: -.000233999963, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TP R Finger4
+      position: {x: -.0797254145, y: .0149581144, z: -.03567072}
+      rotation: {x: .00031782093, y: 1.98759381e-07, z: -.000219386056, w: .99999994}
+      scale: {x: 1.00000036, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: TP R Finger41
+      position: {x: -.02501297, y: 0, z: 9.53674295e-09}
+      rotation: {x: 2.22111444e-11, y: -2.9455931e-08, z: -.000234000021, w: 1}
+      scale: {x: .999999821, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: TP R Finger42
+      position: {x: -.02501297, y: 7.62939436e-08, z: -4.76837148e-09}
+      rotation: {x: -2.90227339e-11, y: 3.46581125e-10, z: -.000233999963, w: 1}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: TPFemale
+      position: {x: -1.6826851e-09, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: c11de35ece621014785a2f77b88612dd,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
