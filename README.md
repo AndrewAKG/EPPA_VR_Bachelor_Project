@@ -1,1 +1,1 @@
-# EPPA_VR
+# Elderly People Personal Assistant VR Simulator
