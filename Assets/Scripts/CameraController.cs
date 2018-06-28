@@ -4,17 +4,50 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    public GameObject player;
+    [SerializeField]
+    private Transform target;
 
-    private Vector3 offset;
+    [SerializeField]
+    private Vector3 offsetPosition;
 
-    void Start()
+    [SerializeField]
+    private Space offsetPositionSpace = Space.Self;
+
+    [SerializeField]
+    private bool lookAt = true;
+
+    private void LateUpdate()
     {
-        offset = transform.position - player.transform.position;
+        Refresh();
     }
 
-    void LateUpdate()
+    public void Refresh()
     {
-        transform.position = player.transform.position + offset;
+        if (target == null)
+        {
+            Debug.LogWarning("Missing target ref !", this);
+
+            return;
+        }
+
+        // compute position
+        if (offsetPositionSpace == Space.Self)
+        {
+            transform.position = target.TransformPoint(offsetPosition);
+        }
+        else
+        {
+            transform.position = target.position + offsetPosition;
+        }
+
+        // compute rotation
+        if (lookAt)
+        {
+            transform.LookAt(target);
+        }
+        else
+        {
+            transform.rotation = target.rotation;
+        }
     }
 }
