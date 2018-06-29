@@ -18,7 +18,7 @@ public class PlayerNavController : MonoBehaviour {
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         transform.Rotate(0, x, 0);
 
-        if (Input.GetKey("w"))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             if (!isWalking)
             {
