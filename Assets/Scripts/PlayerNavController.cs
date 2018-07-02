@@ -8,6 +8,8 @@ public class PlayerNavController : MonoBehaviour {
     public bool isWalking = false;
     public float speed;
 
+   
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -15,6 +17,7 @@ public class PlayerNavController : MonoBehaviour {
 
     void Update()
     {
+    
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         transform.Rotate(0, x, 0);
 
