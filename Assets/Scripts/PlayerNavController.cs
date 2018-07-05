@@ -2,37 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerNavController : MonoBehaviour {
+public class PlayerNavController : MonoBehaviour
+{
 
     private Animator anim;
     public bool isWalking = false;
     public float speed;
     public Vector3 originalPos;
-    public bool once = false;
-
-   
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        originalPos = transform.position;
     }
 
     void Update()
     {
-        if (!once)
-        {
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerGoToSM"))
-            {
-                Debug.Log("Entered");
-            }
-            else
-            {
-                transform.position = originalPos;
-                once = true;
-            }
-        }
-        
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         transform.Rotate(0, x, 0);
 
