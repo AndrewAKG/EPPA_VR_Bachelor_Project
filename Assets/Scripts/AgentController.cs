@@ -24,6 +24,11 @@ public class AgentController : MonoBehaviour
         GoToSupermarket();
     }
 
+    public NavMeshAgent getAgent()
+    {
+        return this.agent;
+    }
+
     public void GoToSupermarket()
     {
         size = points.Length;
@@ -39,7 +44,7 @@ public class AgentController : MonoBehaviour
         if (destPoint == size)
         {
             Debug.Log(destPoint);
-            agent.isStopped = true;
+            //agent.isStopped = true;
             finished = true;
         }
 
@@ -52,9 +57,6 @@ public class AgentController : MonoBehaviour
         // close to the current one.
         if (!agent.pathPending && agent.remainingDistance < 0.5f && !finished)
             GoToSupermarket();
-
-        if (finished)
-            anim.Play("M_idle1");
     }
 
     public bool isFinished()

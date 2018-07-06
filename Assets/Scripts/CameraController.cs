@@ -5,8 +5,10 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
     public Transform agent;
+    public Animator agentAnim;
     public Transform player;
     public AgentController controller;
+    private bool once = false; 
 
     [SerializeField]
     private Transform target;
@@ -31,23 +33,56 @@ public class CameraController : MonoBehaviour {
             setTarget(agent);
     }
 
-    private void Update()
+    IEnumerator Delay()
     {
-        if (controller != null)
+        Debug.Log("1");
+        bool x = true;
+        while (x)
         {
-            if (controller.isFinished())
-            {
-                if (player != null)
-                    setTarget(player);
-
-                agent.transform.localScale = new Vector3(0, 0, 0);
-            }
-        }
-        else
-        {
-            Debug.LogError("Controller Null");
+            controller.getAgent().isStopped = true;
+            agentAnim.Play("M_idle1");
+            Debug.Log("2");
+            yield return new WaitForSeconds(2.0f);
+            Debug.Log("3");
+            agentAnim.Play("M_turnR90");
+            Debug.Log("4");
+            agentAnim.Play("M_turnR90");
+            Debug.Log("5");
+            yield return new WaitForSeconds(2.0f);
+            Debug.Log("6");
+            agentAnim.Play("M_clap");
+            Debug.Log("7");
+            yield return new WaitForSeconds(2.0f);
+            Debug.Log("8");
+            x = false;
         }
     }
+
+    private void Update()
+    {
+        if (!once)
+        {
+            if (controller != null)
+            {
+                if (controller.isFinished())
+                {
+                    if (player != null)
+                    {
+                        //StartCoroutine(Delay());
+                        setTarget(player);
+                        once = true;
+                    }
+
+                    agent.transform.localScale = new Vector3(0, 0, 0);
+                }
+            }
+            else
+            {
+                Debug.LogError("Controller Null");
+            }
+        }
+    }
+        
 
     private void LateUpdate()
     { 
