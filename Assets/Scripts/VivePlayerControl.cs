@@ -10,7 +10,7 @@ public class VivePlayerControl : MonoBehaviour
     public Animator anim;
     public bool isWalking = false;
     public float speed;
-    private float sensitivityX = 1.5F;
+    public float sensitivityX;
 
     // 1
     private SteamVR_TrackedObject trackedObj;
@@ -33,27 +33,18 @@ public class VivePlayerControl : MonoBehaviour
 
         //If finger is on touchpad
         if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
-        {
+        { 
+            if (!isWalking)
+            {
+                isWalking = true;
+            }
             //Read the touchpad values
             touchpad = Controller.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
-
-            if (touchpad.y > 0.5f)
+            var z = touchpad.y * Time.deltaTime * speed;
+            if(z > 0)
             {
-                if (!isWalking)
-                {
-                    isWalking = true;
-                    anim.Play("M_walk");
-                }
-                var z = Time.deltaTime * speed;
+                anim.Play("M_walk");
                 player.transform.Translate(0, 0, z); // Only move when upon pressed.
-            }
-            else
-            {
-                if (isWalking)
-                {
-                    anim.Play("M_idle1");
-                }
-                isWalking = false;
             }
 
             if (touchpad.x > 0.3f || touchpad.x < -0.3f)
@@ -61,6 +52,20 @@ public class VivePlayerControl : MonoBehaviour
                 player.transform.Rotate(0, touchpad.x * sensitivityX, 0);
             }
         }
+        else
+        {
+            if (isWalking)
+            {
+                anim.Play("M_idle1");
+            }
+            isWalking = false;
+        }
 
+        //if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
+        //{
+        //    touchpad = Controller.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
+        //    var y = touchpad.x * Time.deltaTime * sensitivityX;
+        //    player.transform.Rotate(0, y, 0);
+        //}
     }
 }
