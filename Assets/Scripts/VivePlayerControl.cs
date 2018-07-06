@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class VivePlayerControl : MonoBehaviour {
+public class VivePlayerControl : MonoBehaviour
+{
 
     public GameObject player;
     public Animator anim;
@@ -27,7 +28,8 @@ public class VivePlayerControl : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
 
         //If finger is on touchpad
         if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
@@ -59,6 +61,6 @@ public class VivePlayerControl : MonoBehaviour {
                 player.transform.Rotate(0, touchpad.x * sensitivityX, 0);
             }
         }
-            
+
     }
 }

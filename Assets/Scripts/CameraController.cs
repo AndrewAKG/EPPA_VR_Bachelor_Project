@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
+    public Transform agent;
+    public Transform player;
+    public AgentController controller;
+
     [SerializeField]
     private Transform target;
 
@@ -16,8 +20,37 @@ public class CameraController : MonoBehaviour {
     [SerializeField]
     private bool lookAt = true;
 
-    private void LateUpdate()
+    public void setTarget(Transform target)
     {
+        this.target = target;
+    }
+
+    private void Start()
+    {
+        if (agent != null)
+            setTarget(agent);
+    }
+
+    private void Update()
+    {
+        if (controller != null)
+        {
+            if (controller.isFinished())
+            {
+                if (player != null)
+                    setTarget(player);
+
+                agent.transform.localScale = new Vector3(0, 0, 0);
+            }
+        }
+        else
+        {
+            Debug.LogError("Controller Null");
+        }
+    }
+
+    private void LateUpdate()
+    { 
         Refresh();
     }
 

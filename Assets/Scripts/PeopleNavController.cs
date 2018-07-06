@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PeopleNavController : MonoBehaviour {
+public class PeopleNavController : MonoBehaviour
+{
 
     public Transform[] points;
     private int destPoint = 0;
@@ -50,7 +51,6 @@ public class PeopleNavController : MonoBehaviour {
         //}
 
     }
-
 
     void Update()
     {
