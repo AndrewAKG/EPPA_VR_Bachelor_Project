@@ -11,16 +11,19 @@ public class PeopleNavController : MonoBehaviour
     private NavMeshAgent agent;
     public int size;
     public bool reverse = false;
+    private Animator anim;
 
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        // anim = GetComponent<Animator>();
 
         // Disabling auto-braking allows for continuous movement
         // between points (ie, the agent doesn't slow down as it
         // approaches a destination point).
         agent.autoBraking = false;
+       // anim.Play("M_walk");
 
         size = points.Length;
 
@@ -48,6 +51,14 @@ public class PeopleNavController : MonoBehaviour
         //else
         //{
         //    destPoint += 1;
+        //}
+
+        //if(destPoint == size)
+        //{
+        //    reverse = true;
+        //} else if (destPoint == 0)
+        //{
+        //    reverse = false;
         //}
 
     }

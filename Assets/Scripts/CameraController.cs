@@ -29,8 +29,8 @@ public class CameraController : MonoBehaviour {
 
     private void Start()
     {
-        if (agent != null)
-            setTarget(agent);
+        //if (agent != null)
+        //    setTarget(agent);
     }
 
     IEnumerator Delay()
@@ -58,30 +58,30 @@ public class CameraController : MonoBehaviour {
         }
     }
 
-    private void Update()
-    {
-        if (!once)
-        {
-            if (controller != null)
-            {
-                if (controller.isFinished())
-                {
-                    if (player != null)
-                    {
-                        //StartCoroutine(Delay());
-                        setTarget(player);
-                        once = true;
-                    }
+    //private void Update()
+    //{
+    //    if (!once)
+    //    {
+    //        if (controller != null)
+    //        {
+    //            if (controller.isFinished())
+    //            {
+    //                if (player != null)
+    //                {
+    //                    //StartCoroutine(Delay());
+    //                    setTarget(player);
+    //                    once = true;
+    //                }
 
-                    agent.transform.localScale = new Vector3(0, 0, 0);
-                }
-            }
-            else
-            {
-                Debug.LogError("Controller Null");
-            }
-        }
-    }
+    //                agent.transform.localScale = new Vector3(0, 0, 0);
+    //            }
+    //        }
+    //        else
+    //        {
+    //            Debug.LogError("Controller Null");
+    //        }
+    //    }
+    //}
         
 
     private void LateUpdate()
