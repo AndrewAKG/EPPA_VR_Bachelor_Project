@@ -1,0 +1,174 @@
+[33mcommit 904d1188b4da16c4a3f01f408f7b4cbe438c95c0[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Thu Jul 12 21:35:50 2018 +0200
+
+    fix: Added some starting street people
+
+[33mcommit ce1060de81af77bdf214260bf2c945f42ec59ad7[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Thu Jul 12 20:43:06 2018 +0200
+
+    fix: Added some starting street people
+
+[33mcommit 5e46d34746f0bab715600acfa58275d089be5ad8[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Thu Jul 12 20:25:06 2018 +0200
+
+    feat: Added Vehicles Package
+
+[33mcommit e23a7476db8456c6da5f8faad4dd0cb9d546814e[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Wed Jul 11 16:37:53 2018 +0200
+
+    Update Readme.md
+
+[33mcommit 84b704beea8f05e4dc44f1d614e4841061d1c402[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Wed Jul 11 15:56:20 2018 +0200
+
+    fix: Updated some objects in supermarket scene
+
+[33mcommit 3e730d33158e6e46cd076d143dbfcade0753ad5b[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Wed Jul 11 10:41:52 2018 +0200
+
+    feat: Initializing Supermarket Scene
+
+[33mcommit 1ed69dc2cfd8ad735033e08bdcb7f1bab66743d0[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Tue Jul 10 14:10:48 2018 +0200
+
+    fix: Final City version 1
+
+[33mcommit d091046ee4619a1b672851fd0183096314e3d44a[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Fri Jul 6 15:58:57 2018 +0200
+
+    fix: Updated VivePlayerControl
+
+[33mcommit f99dd11c83827a9e1d6929a8d75eee10ff02e8b1[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Fri Jul 6 14:35:17 2018 +0200
+
+    fix: Modified city, Added agent SM Coroutine not working properly yet
+
+[33mcommit 1a063bc4c6b89d57673bc52c1023d258d8250b39[m
+Merge: b1c42bd 56031b9
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Fri Jul 6 12:08:22 2018 +0200
+
+    fix: Conflicts solved
+
+[33mcommit b1c42bd6d2f6088ad83bdd9ccad0cf9ff4266eff[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Fri Jul 6 11:49:45 2018 +0200
+
+    fix: solving player motion update
+
+[33mcommit 56031b93c979ca5dc49136070468a3242b2b38a5[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Thu Jul 5 22:29:07 2018 +0200
+
+    feat: Added agent navigating to supermarket and switching camera to player
+
+[33mcommit 9eedb2bba18c98f69ae615600e26adc59bcd4d00[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Wed Jul 4 17:08:04 2018 +0200
+
+    fix: Updated some animations
+
+[33mcommit 38397371eb5cc0e1642278f759a6fc18fa7b23b6[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Wed Jul 4 11:11:37 2018 +0200
+
+    feat: Added fountain groups with new animation controllers
+
+[33mcommit d4d40343045358cece76cc3ac741f40839d5c3e1[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Tue Jul 3 20:52:08 2018 +0200
+
+    feat: Added fountain people with new animator controllers
+
+[33mcommit d0e2affee0a3680099780721aa6e223f40a458ce[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Mon Jul 2 18:42:54 2018 +0200
+
+    feat: Added Bank package, added the bank to the city
+
+[33mcommit e062237f3e90c1d5aad429a6e9aafbe11df0dfe7[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Mon Jul 2 18:06:58 2018 +0200
+
+    feat: Added Navigation by vive controllers, added steamVR, cinemachine packages
+
+[33mcommit 2e6e84ceb30397bfff002357c3bf4b9a4e223ac7[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Sun Jul 1 19:42:27 2018 +0200
+
+    fix: Added some fountain couples with 4 new animator controllers
+
+[33mcommit 3961ce9ba41a814d9ed9a0d3bf23e6c5cc1df7ef[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Sat Jun 30 14:10:20 2018 +0200
+
+    feat: Added Supermarket package to assets, supermarket building to the city
+
+[33mcommit 83161d9f68297194a33637e21d25c6044511f5ec[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Sat Jun 30 13:36:20 2018 +0200
+
+    fix: Added some buildings, sidewalks -> Inner City Complete
+
+[33mcommit 60fb42658c9296cf2f2f958026c4130be908dbdb[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Sat Jun 30 13:27:32 2018 +0200
+
+    fix: Updated city by adding some sidewalks
+
+[33mcommit a18d2d17b5f653620f4e83e6343d6639f6f649ca[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Fri Jun 29 21:09:30 2018 +0200
+
+    fix: Updated some city buildings and streets, classified toon prefabs to males and females
+
+[33mcommit 8a3690a1852440475c891972b56d9403eb5f175a[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Thu Jun 28 23:42:21 2018 +0200
+
+    fix: Character animation and Navigation working via CameraController and PlayerController scripts
+
+[33mcommit 6073a080c72d9fa8ea82a7b8fff6f30dbabe0258[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Wed Jun 27 16:14:34 2018 +0200
+
+    feat: Added Scripts, Animation, Prefabs and Scenes Folders
+
+[33mcommit 919a457d181a6ab79aebf74e156eed4fb86ad73a[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Wed Jun 27 16:10:07 2018 +0200
+
+    feat: Added NavMeshComponents to assets
+
+[33mcommit c4a30d2bcbcbccbc6c3fac25cb447e39d0b18c7b[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Tue Jun 26 17:20:09 2018 +0200
+
+    feat: Adding toon people unity asset
+
+[33mcommit 09374752f2d4b98c078758ffbe4facb4ccda1adf[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Tue Jun 26 17:06:33 2018 +0200
+
+    feat: Adding modern city pack unity asset
+
+[33mcommit 2690d6c257dc7c4dd1ed61f5e4d6b14462f33fdb[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Tue Jun 26 15:16:11 2018 +0200
+
+    Update Readme.md
+
+[33mcommit 24da15ec6b62e508a2295ab694c52d828bde5102[m
+Author: TheDreamHunter <andrew.kamal@student.guc.edu.eg>
+Date:   Mon Jun 25 13:17:39 2018 +0200
+
+    Initial commit
