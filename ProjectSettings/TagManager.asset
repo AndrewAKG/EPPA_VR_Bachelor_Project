@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Moshah
+  - Leg
+  - SnapCube
+  - Arm
+  - SnapCylinder
+  - Saucers
+  - ExcludeTeleport
+  - Torso
+  - Head
+  - AgentCanvas
+  - PlayerCanvas
+  - Agent
   layers:
   - Default
   - TransparentFX
