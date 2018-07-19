@@ -7,6 +7,7 @@ public class ShoppersAI : MonoBehaviour {
 
     public Transform path;
     public GameObject shopper;
+    //private GameObject shopperCart;
     private List<Transform> nodes;
     private NavMeshAgent agent;
     private int currentNode = 0;
@@ -29,13 +30,20 @@ public class ShoppersAI : MonoBehaviour {
             }
         }
 
+        //foreach (Transform tr in transform)
+        //{
+        //    if (tr.tag == "AICart")
+        //    {
+        //        print(tr.gameObject);
+        //        shopperCart = tr.gameObject;
+        //    }
+        //}
+
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = true; 
         agent.updatePosition = true;
         agent.autoBraking = false;
-
-        print(GetComponent<Collider>().bounds.size);
 
         originalPos = transform.position;
         anim.SetBool("walking", true);
@@ -59,6 +67,8 @@ public class ShoppersAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        //shopperCart.transform.position = transform.TransformPoint(-0.02413365f, 0f, 1.117714f);
+
         RaycastHit hit;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
         sensorOrigin = transform.position;
@@ -71,7 +81,6 @@ public class ShoppersAI : MonoBehaviour {
             {
                 Debug.DrawLine(sensorOrigin, hit.point);
                 print(hit.collider.gameObject);
-                //anim.Play("M_idle1");
                 anim.SetBool("walking", false);
                 agent.isStopped = true;
             }     
@@ -79,7 +88,6 @@ public class ShoppersAI : MonoBehaviour {
         else if (!agent.pathPending && agent.remainingDistance < 0.5f && !finished) {
             agent.isStopped = false;
             anim.SetBool("walking", true);
-            //anim.Play("M_walk");
             GoToNextNode();
         }
 
