@@ -13,6 +13,8 @@ public class ShoppersAI : MonoBehaviour {
     private bool finished;
     private Animator anim;
     private Vector3 originalPos;
+    private Vector3 sensorOrigin;
+    private Vector3 sensorOffset = new Vector3(0f, 0.9f, 0.3f);
 
 	// Use this for initialization
 	void Start () {
@@ -27,13 +29,17 @@ public class ShoppersAI : MonoBehaviour {
             }
         }
 
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = true; 
         agent.updatePosition = true;
         agent.autoBraking = false;
 
+        print(GetComponent<Collider>().bounds.size);
+
         originalPos = transform.position;
-        GoToNextNode();
+        anim.SetBool("walking", true);
+       // GoToNextNode();
     }
 
     private void GoToNextNode()
@@ -53,8 +59,29 @@ public class ShoppersAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (!agent.pathPending && agent.remainingDistance < 0.5f && !finished)
+        RaycastHit hit;
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+        sensorOrigin = transform.position;
+        sensorOrigin += transform.forward * sensorOffset.z;
+        sensorOrigin += transform.up * sensorOffset.y;
+
+        if (Physics.Raycast(sensorOrigin, fwd, out hit, 2f))
+        {
+            if (hit.collider.gameObject.CompareTag("AIShopper") || hit.collider.gameObject.CompareTag("AICart"))
+            {
+                Debug.DrawLine(sensorOrigin, hit.point);
+                print(hit.collider.gameObject);
+                //anim.Play("M_idle1");
+                anim.SetBool("walking", false);
+                agent.isStopped = true;
+            }     
+        }
+        else if (!agent.pathPending && agent.remainingDistance < 0.5f && !finished) {
+            agent.isStopped = false;
+            anim.SetBool("walking", true);
+            //anim.Play("M_walk");
             GoToNextNode();
+        }
 
         if (finished)
         {

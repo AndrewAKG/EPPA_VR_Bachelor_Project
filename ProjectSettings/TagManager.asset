@@ -16,6 +16,8 @@ TagManager:
   - AgentCanvas
   - PlayerCanvas
   - Agent
+  - AIShopper
+  - AICart
   layers:
   - Default
   - TransparentFX
