@@ -8,6 +8,20 @@ TagManager:
   - AICar
   - TLS2
   - TLSP
+  - Moshah
+  - Leg
+  - SnapCube
+  - Arm
+  - SnapCylinder
+  - Saucers
+  - ExcludeTeleport
+  - Torso
+  - Head
+  - AgentCanvas
+  - PlayerCanvas
+  - Agent
+  - AIShopper
+  - AICart
   layers:
   - Default
   - TransparentFX

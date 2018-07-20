@@ -8,7 +8,7 @@ public class CameraControl : MonoBehaviour {
     public Animator agentAnim;
     public Transform player;
     public AgentController controller;
-    private bool once = false; 
+    //private bool once = false; 
 
     [SerializeField]
     private Transform target;
