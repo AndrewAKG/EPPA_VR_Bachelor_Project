@@ -7,6 +7,7 @@ public class CarsAIController : MonoBehaviour {
     private Renderer carRenderer;
     private List<Transform> nodes;
     private int currentNode = 0;
+    private bool carStateChanged = false;
 
     public Transform path;
     [Header("Car Engine")]
@@ -20,7 +21,6 @@ public class CarsAIController : MonoBehaviour {
     public float currentSpeed;
     public float maxSpeed = 80f;
     public bool isBraking = false;
-    public bool carStateChanged = false;
 
     [Header("Sensors")]
     public float sensorLength = 5f;
