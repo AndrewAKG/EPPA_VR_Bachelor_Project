@@ -10,27 +10,23 @@ public class CarsAIController : MonoBehaviour {
 
     public Transform path;
     [Header("Car Engine")]
-    public float maxSteeringAngle = 40f;
+    public float maxSteeringAngle = 45f;
     public WheelCollider wheelFL;
     public WheelCollider wheelFR;
     public WheelCollider wheelRL;
     public WheelCollider wheelRR;
-    public float maxMotorTorque = 80f;
+    public float maxMotorTorque = 50f;
     public float maxBrakingTorque = 200f;
     public float currentSpeed;
-    public float maxSpeed = 100f;
+    public float maxSpeed = 80f;
     public bool isBraking = false;
 
     [Header("Sensors")]
-    public float sensorLength = 3.5f;
+    public float sensorLength = 5f;
     public Vector3 frontSensorOffset = new Vector3(1.15f, 0.75f, 2.4f);
-    //public float frontSideOffset = 1.15f;
 
 	// Use this for initialization
 	void Start () {
-        //carRenderer = GetComponent<Renderer>();
-        //print(carRenderer.bounds.size);
-
         Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
         nodes = new List<Transform>();
 
@@ -41,8 +37,7 @@ public class CarsAIController : MonoBehaviour {
                 nodes.Add(pathTransforms[i]);
             }
         }
-        print(nodes.Count);
-	}
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -64,25 +59,25 @@ public class CarsAIController : MonoBehaviour {
         // front center sensor
         if(Physics.Raycast(sensorStartPos, fwd, out hit, sensorLength))
         {
-            if (hit.collider.gameObject.CompareTag("TLS"))
+            if (hit.collider.gameObject.CompareTag("TLS") || hit.collider.gameObject.CompareTag("TLS2"))
             {
-                TLSController controller = hit.collider.gameObject.GetComponent<TLSController>();
-                int trafficState = controller.state;
+                TrafficLight light = hit.collider.gameObject.GetComponent<TrafficLight>();
+                int trafficState = light.getState();
 
                 if (trafficState == 1 || trafficState == 2)
                 {
-                    hit.collider.enabled = true;
-                    print("State: " + trafficState);
                     isBraking = true;
                 }
                 else if (trafficState == 3)
                 {
-                    hit.collider.enabled = false;
-                    print("State: " + trafficState);
                     isBraking = false;
                 }
             }
-            Debug.DrawLine(sensorStartPos, hit.point);
+
+            //if (hit.collider.gameObject.CompareTag("AICar"))
+            //{
+            //    isBraking = true;
+            //}
         }
 
         // front right sensor
@@ -111,7 +106,7 @@ public class CarsAIController : MonoBehaviour {
 
     private void Drive()
     {
-        currentSpeed = 2 * Mathf.PI * wheelFL.radius * wheelFL.rpm * 60 / 100;
+        currentSpeed = 2 * Mathf.PI * wheelFL.radius * wheelFL.rpm * 60 / 1000;
 
         if (currentSpeed < maxSpeed && !isBraking)
         {
@@ -130,7 +125,7 @@ public class CarsAIController : MonoBehaviour {
 
     private void CheckNextPointDistance()
     {
-        if(Vector3.Distance(transform.position, nodes[currentNode].position) < 0.0f)
+        if(Vector3.Distance(transform.position, nodes[currentNode].position) < 1f)
         {
             if(currentNode == nodes.Count - 1)
             {
@@ -147,8 +142,8 @@ public class CarsAIController : MonoBehaviour {
     {
         if (isBraking)
         {
-            //wheelFL.brakeTorque = maxBrakingTorque;
-            //wheelFR.brakeTorque = maxBrakingTorque;
+            wheelFL.brakeTorque = maxBrakingTorque;
+            wheelFR.brakeTorque = maxBrakingTorque;
             wheelRL.brakeTorque = maxBrakingTorque;
             wheelRR.brakeTorque = maxBrakingTorque;
         }

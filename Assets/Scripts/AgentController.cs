@@ -5,10 +5,10 @@ using UnityEngine.AI;
 
 public class AgentController : MonoBehaviour
 {
-
-    public Transform[] points;
+    public Transform path;
+    private List<Transform> nodes;
+    private int currentNode = 0;
     private Animator anim;
-    private int destPoint = 0;
     private NavMeshAgent agent;
     private int size;
     private bool finished = false;
@@ -17,6 +17,16 @@ public class AgentController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
+        nodes = new List<Transform>();
+
+        for (int i = 0; i < pathTransforms.Length; i++)
+        {
+            if (pathTransforms[i] != path.transform)
+            {
+                nodes.Add(pathTransforms[i]);
+            }
+        }
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
@@ -31,19 +41,18 @@ public class AgentController : MonoBehaviour
 
     public void GoToSupermarket()
     {
-        size = points.Length;
+        size = nodes.Count;
 
         if (size == 0)
             return;
 
         // Set the agent to go to the currently selected destination.
-        agent.SetDestination(points[destPoint].position);
+        agent.SetDestination(nodes[currentNode].position);
+        currentNode += 1;
 
-        destPoint += 1;
-
-        if (destPoint == size)
+        if (currentNode == size)
         {
-            Debug.Log(destPoint);
+            //Debug.Log(destPoint);
             //agent.isStopped = true;
             finished = true;
         }
