@@ -20,6 +20,7 @@ public class CarsAIController : MonoBehaviour {
     public float currentSpeed;
     public float maxSpeed = 80f;
     public bool isBraking = false;
+    public bool carStateChanged = false;
 
     [Header("Sensors")]
     public float sensorLength = 5f;
@@ -38,6 +39,8 @@ public class CarsAIController : MonoBehaviour {
                 nodes.Add(pathTransforms[i]);
             }
         }
+
+        print(GetComponent<Renderer>().bounds.size);
     }
 	
 	// Update is called once per frame
@@ -68,11 +71,14 @@ public class CarsAIController : MonoBehaviour {
                 if (trafficState == 1 || trafficState == 2)
                 {
                     isBraking = true;
+                    carStateChanged = true;
                 }
-                else if (trafficState == 3)
-                {
-                    isBraking = false;
-                }
+            }
+
+            if (hit.collider.gameObject.CompareTag("AICar"))
+            {
+                isBraking = true;
+                carStateChanged = true;
             }
         }
 
@@ -88,11 +94,14 @@ public class CarsAIController : MonoBehaviour {
                 if (trafficState == 1 || trafficState == 2)
                 {
                     isBraking = true;
+                    carStateChanged = true;
                 }
-                else if (trafficState == 3)
-                {
-                    isBraking = false;
-                }
+            }
+
+            if (hit.collider.gameObject.CompareTag("AICar"))
+            {
+                isBraking = true;
+                carStateChanged = true;
             }
         }
 
@@ -108,14 +117,23 @@ public class CarsAIController : MonoBehaviour {
                 if (trafficState == 1 || trafficState == 2)
                 {
                     isBraking = true;
+                    carStateChanged = true;
                 }
-                else if (trafficState == 3)
-                {
-                    isBraking = false;
-                }
+            }
+
+            if (hit.collider.gameObject.CompareTag("AICar"))
+            {
+                isBraking = true;
+                carStateChanged = true;
             }
         }
 
+        if (!carStateChanged && isBraking)
+        {
+            isBraking = false;
+        }
+
+        carStateChanged = false;
     }
 
     private void ApplySteer()
