@@ -23,7 +23,8 @@ public class CarsAIController : MonoBehaviour {
 
     [Header("Sensors")]
     public float sensorLength = 5f;
-    public Vector3 frontSensorOffset = new Vector3(1.15f, 0.75f, 2.4f);
+    [SerializeField]
+    public Vector3 frontSensorOffset;
 
 	// Use this for initialization
 	void Start () {
@@ -73,25 +74,46 @@ public class CarsAIController : MonoBehaviour {
                     isBraking = false;
                 }
             }
-
-            //if (hit.collider.gameObject.CompareTag("AICar"))
-            //{
-            //    isBraking = true;
-            //}
         }
 
         // front right sensor
         sensorStartPos += transform.right * frontSensorOffset.x;
         if (Physics.Raycast(sensorStartPos, fwd, out hit, sensorLength))
         {
-            Debug.DrawLine(sensorStartPos, hit.point);
+            if (hit.collider.gameObject.CompareTag("TLS") || hit.collider.gameObject.CompareTag("TLS2"))
+            {
+                TrafficLight light = hit.collider.gameObject.GetComponent<TrafficLight>();
+                int trafficState = light.getState();
+
+                if (trafficState == 1 || trafficState == 2)
+                {
+                    isBraking = true;
+                }
+                else if (trafficState == 3)
+                {
+                    isBraking = false;
+                }
+            }
         }
 
         // front left sensor
         sensorStartPos -= transform.right * frontSensorOffset.x * 2;
         if (Physics.Raycast(sensorStartPos, fwd, out hit, sensorLength))
         {
-            Debug.DrawLine(sensorStartPos, hit.point);
+            if (hit.collider.gameObject.CompareTag("TLS") || hit.collider.gameObject.CompareTag("TLS2"))
+            {
+                TrafficLight light = hit.collider.gameObject.GetComponent<TrafficLight>();
+                int trafficState = light.getState();
+
+                if (trafficState == 1 || trafficState == 2)
+                {
+                    isBraking = true;
+                }
+                else if (trafficState == 3)
+                {
+                    isBraking = false;
+                }
+            }
         }
 
     }
