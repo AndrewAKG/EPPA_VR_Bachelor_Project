@@ -27,6 +27,11 @@ public class CarsAIController : MonoBehaviour {
     [SerializeField]
     public Vector3 frontSensorOffset;
 
+    public CarsAIController(Transform path)
+    {
+        this.path = path;
+    }
+
 	// Use this for initialization
 	void Start () {
         Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
@@ -40,7 +45,7 @@ public class CarsAIController : MonoBehaviour {
             }
         }
 
-        print(GetComponent<Renderer>().bounds.size);
+        //print(GetComponent<Renderer>().bounds.size);
     }
 	
 	// Update is called once per frame
