@@ -9,7 +9,7 @@ public class AICarsSpawner : MonoBehaviour {
     private Transform carPath;
     private Vector3 carStartPosition;
     private Quaternion carStartRotation;
-    private GameObject spawnedCar;
+    private GameObject carType;
     private int carsCount = 0;
     private int randomIndex = 0;
 
@@ -27,39 +27,29 @@ public class AICarsSpawner : MonoBehaviour {
 
     IEnumerator SpawnCars()
     {
-        while(carsCount < 3)
+        while(carsCount < 12)
         {
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(2);
             InstantiateCar();
         }
     }
 
     private void InstantiateCar()
     {
-        //int randomIndex = (int)(Random.Range(0, 2));
-        //print(randomIndex);
-        int randomCar = (int)(Random.Range(0, cars.Length - 1));
-        //print(randomCar);
+        int randomCarType = (int)(Random.Range(0, cars.Length - 1));
         carPath = carsPaths[randomIndex];
-        //print(carPath);
         carStartPosition = spawningPoints[randomIndex].position;
-        //print(carStartPosition);
         carStartRotation = spawningPoints[randomIndex].rotation;
-        spawnedCar = new GameObject();
-        spawnedCar = cars[randomCar];
-        //print(spawnedCar);
-        spawnedCar.GetComponent<CarsAIController>().path = carPath;
-        //print(spawnedCar.GetComponent<CarsAIController>().path);
-        Instantiate(spawnedCar, carStartPosition, carStartRotation);
+        carType = cars[randomCarType];
+        GameObject spawnedCar = Instantiate(carType, carStartPosition, carStartRotation);
+        CarsAIController carController = spawnedCar.GetComponent<CarsAIController>();
+        carController.path = carPath;
         carsCount++;
+        randomIndex++;
 
-        if(randomIndex == spawningPoints.Length - 1)
+        if (randomIndex == spawningPoints.Length)
         {
             randomIndex = 0;
-        }
-        else
-        {
-            randomIndex++;
         }
     }
 }

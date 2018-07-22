@@ -34,26 +34,32 @@ public class CarsAIController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
-        nodes = new List<Transform>();
-
-        for(int i = 0; i < pathTransforms.Length; i++)
+        if (path != null)
         {
-            if(pathTransforms[i] != path.transform)
+            Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
+            nodes = new List<Transform>();
+
+            for (int i = 0; i < pathTransforms.Length; i++)
             {
-                nodes.Add(pathTransforms[i]);
+                if (pathTransforms[i] != path.transform)
+                {
+                    nodes.Add(pathTransforms[i]);
+                }
             }
         }
-
+        
         //print(GetComponent<Renderer>().bounds.size);
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         ApplySensors();
-        ApplySteer();
-        Drive();
-        CheckNextPointDistance();
+        if(path != null)
+        {
+            ApplySteer();
+            Drive();
+            CheckNextPointDistance();
+        }
         Braking();
 	}
 
