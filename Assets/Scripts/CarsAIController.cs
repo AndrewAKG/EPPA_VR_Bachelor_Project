@@ -48,7 +48,7 @@ public class CarsAIController : MonoBehaviour {
             }
         }
         
-        //print(GetComponent<Renderer>().bounds.size);
+        print(GetComponent<Renderer>().bounds.size);
     }
 	
 	// Update is called once per frame
@@ -74,12 +74,19 @@ public class CarsAIController : MonoBehaviour {
         // front center sensor
         if(Physics.Raycast(sensorStartPos, fwd, out hit, sensorLength))
         {
-            if (hit.collider.gameObject.CompareTag("TLS") || hit.collider.gameObject.CompareTag("TLS2"))
+            if (hit.collider.gameObject.CompareTag("TLSHC") || hit.collider.gameObject.CompareTag("TLSVC"))
             {
-                TrafficLight light = hit.collider.gameObject.GetComponent<TrafficLight>();
+                GameObject collisionObject = hit.collider.gameObject;
+                GameObject collisionObjectParent = collisionObject.transform.parent.gameObject;
+                TrafficLight light = collisionObjectParent.GetComponent<TrafficLight>();
                 int trafficState = light.getState();
 
-                if (trafficState == 1 || trafficState == 2)
+                Vector3 localPoint = hit.transform.InverseTransformPoint(hit.point);
+                Vector3 localDir = localPoint.normalized;
+                float fwdDot = Vector3.Dot(localDir, Vector3.forward);
+                bool front = fwdDot < 0;
+
+                if ((trafficState == 1 || trafficState == 2) && front)
                 {
                     isBraking = true;
                     carStateChanged = true;
@@ -94,50 +101,50 @@ public class CarsAIController : MonoBehaviour {
         }
 
         // front right sensor
-        sensorStartPos += transform.right * frontSensorOffset.x;
-        if (Physics.Raycast(sensorStartPos, fwd, out hit, sensorLength))
-        {
-            if (hit.collider.gameObject.CompareTag("TLS") || hit.collider.gameObject.CompareTag("TLS2"))
-            {
-                TrafficLight light = hit.collider.gameObject.GetComponent<TrafficLight>();
-                int trafficState = light.getState();
+        //sensorStartPos += transform.right * frontSensorOffset.x;
+        //if (Physics.Raycast(sensorStartPos, fwd, out hit, sensorLength))
+        //{
+        //    if (hit.collider.gameObject.CompareTag("TLS") || hit.collider.gameObject.CompareTag("TLS2"))
+        //    {
+        //        TrafficLight light = hit.collider.gameObject.GetComponent<TrafficLight>();
+        //        int trafficState = light.getState();
 
-                if (trafficState == 1 || trafficState == 2)
-                {
-                    isBraking = true;
-                    carStateChanged = true;
-                }
-            }
+        //        if (trafficState == 1 || trafficState == 2)
+        //        {
+        //            isBraking = true;
+        //            carStateChanged = true;
+        //        }
+        //    }
 
-            if (hit.collider.gameObject.CompareTag("AICar"))
-            {
-                isBraking = true;
-                carStateChanged = true;
-            }
-        }
+        //    if (hit.collider.gameObject.CompareTag("AICar"))
+        //    {
+        //        isBraking = true;
+        //        carStateChanged = true;
+        //    }
+        //}
 
         // front left sensor
-        sensorStartPos -= transform.right * frontSensorOffset.x * 2;
-        if (Physics.Raycast(sensorStartPos, fwd, out hit, sensorLength))
-        {
-            if (hit.collider.gameObject.CompareTag("TLS") || hit.collider.gameObject.CompareTag("TLS2"))
-            {
-                TrafficLight light = hit.collider.gameObject.GetComponent<TrafficLight>();
-                int trafficState = light.getState();
+        //sensorStartPos -= transform.right * frontSensorOffset.x * 2;
+        //if (Physics.Raycast(sensorStartPos, fwd, out hit, sensorLength))
+        //{
+        //    if (hit.collider.gameObject.CompareTag("TLS") || hit.collider.gameObject.CompareTag("TLS2"))
+        //    {
+        //        TrafficLight light = hit.collider.gameObject.GetComponent<TrafficLight>();
+        //        int trafficState = light.getState();
 
-                if (trafficState == 1 || trafficState == 2)
-                {
-                    isBraking = true;
-                    carStateChanged = true;
-                }
-            }
+        //        if (trafficState == 1 || trafficState == 2)
+        //        {
+        //            isBraking = true;
+        //            carStateChanged = true;
+        //        }
+        //    }
 
-            if (hit.collider.gameObject.CompareTag("AICar"))
-            {
-                isBraking = true;
-                carStateChanged = true;
-            }
-        }
+        //    if (hit.collider.gameObject.CompareTag("AICar"))
+        //    {
+        //        isBraking = true;
+        //        carStateChanged = true;
+        //    }
+        //}
 
         if (!carStateChanged && isBraking)
         {

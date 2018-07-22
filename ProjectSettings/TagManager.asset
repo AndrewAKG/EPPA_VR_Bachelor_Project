@@ -23,6 +23,8 @@ TagManager:
   - AIShopper
   - AICart
   - AIPedestrian
+  - TLSHC
+  - TLSVC
   layers:
   - Default
   - TransparentFX

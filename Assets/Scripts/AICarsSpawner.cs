@@ -42,6 +42,7 @@ public class AICarsSpawner : MonoBehaviour {
         carStartRotation = spawningPoints[randomIndex].rotation;
         carType = cars[randomCarType];
         GameObject spawnedCar = Instantiate(carType, carStartPosition, carStartRotation);
+        spawnedCar.gameObject.tag = "AICar";
         CarsAIController carController = spawnedCar.GetComponent<CarsAIController>();
         carController.path = carPath;
         carsCount++;
