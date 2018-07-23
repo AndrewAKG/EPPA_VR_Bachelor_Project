@@ -181,14 +181,10 @@ public class CarsAIController : MonoBehaviour {
         {
             wheelFL.motorTorque = maxMotorTorque;
             wheelFR.motorTorque = maxMotorTorque;
-            wheelRL.motorTorque = maxMotorTorque;
-            wheelRR.motorTorque = maxMotorTorque;
         } else
         {
             wheelFL.motorTorque = 0;
             wheelFR.motorTorque = 0;
-            wheelRL.motorTorque = 0;
-            wheelRR.motorTorque = 0;
         }
     }
 
