@@ -884,10 +884,10 @@ MonoBehaviour:
   wheelFR: {fileID: 146316955513141024}
   wheelRL: {fileID: 146114206504952658}
   wheelRR: {fileID: 146032222779315766}
-  maxMotorTorque: 80
-  maxBrakingTorque: 200
+  maxMotorTorque: 50
+  maxBrakingTorque: 250
   currentSpeed: 0
-  maxSpeed: 120
+  maxSpeed: 80
   isBraking: 0
   sensorLength: 5
   frontSensorOffset: {x: 1.15, y: 0.75, z: 2.4}
