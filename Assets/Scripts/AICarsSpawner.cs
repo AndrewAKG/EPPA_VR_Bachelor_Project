@@ -40,13 +40,16 @@ public class AICarsSpawner : MonoBehaviour {
         carStartPosition = spawningPoints[randomIndex].position;
         carStartRotation = spawningPoints[randomIndex].rotation;
         carType = cars[randomCarType];
-        GameObject spawnedCar = Instantiate(carType, carStartPosition, carStartRotation);
-        spawnedCar.gameObject.tag = "AICar";
-        CarsAIController carController = spawnedCar.GetComponent<CarsAIController>();
-        carController.path = carPath;
-        carsCount++;
+        if (checkIfPosEmpty(carStartPosition))
+        {
+            GameObject spawnedCar = Instantiate(carType, carStartPosition, carStartRotation);
+            spawnedCar.gameObject.tag = "AICar";
+            CarsAIController carController = spawnedCar.GetComponent<CarsAIController>();
+            carController.path = carPath;
+            carsCount++;
+            randomCarType++;
+        }
         randomIndex++;
-        randomCarType++;
 
         if (randomIndex == spawningPoints.Length)
         {
@@ -57,5 +60,27 @@ public class AICarsSpawner : MonoBehaviour {
         {
             randomCarType = 0;
         }
+    }
+
+    public bool checkIfPosEmpty(Vector3 targetPos)
+    {
+        var hitColliders = Physics.OverlapSphere(targetPos, 5);
+        if (hitColliders.Length > 0)
+        {
+            foreach(Collider hitCollider in hitColliders)
+            {
+                if (hitCollider.gameObject.CompareTag("AICar"))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(spawningPoints[randomIndex].position, 6.1f);
     }
 }
