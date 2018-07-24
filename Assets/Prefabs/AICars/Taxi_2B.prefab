@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 114815275002890618}
   m_Layer: 0
   m_Name: Taxi_2B
-  m_TagString: Untagged
+  m_TagString: AICar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -727,10 +727,10 @@ MonoBehaviour:
   wheelFR: {fileID: 146416022193511764}
   wheelRL: {fileID: 146967640945147554}
   wheelRR: {fileID: 146938921884549030}
-  maxMotorTorque: 80
+  maxMotorTorque: 50
   maxBrakingTorque: 200
   currentSpeed: 0
-  maxSpeed: 100
+  maxSpeed: 80
   isBraking: 0
   sensorLength: 5
   frontSensorOffset: {x: 1.25, y: 0.75, z: 2.9}

@@ -5,13 +5,13 @@ using UnityEngine;
 public class AICarsSpawner : MonoBehaviour {
 
     private Vector3 SpawningPosition;
-    //private CarsAIController carController;
     private Transform carPath;
     private Vector3 carStartPosition;
     private Quaternion carStartRotation;
     private GameObject carType;
     private int carsCount = 0;
     private int randomIndex = 0;
+    private int randomCarType = 0;
 
     [SerializeField]
     public Transform[] spawningPoints;
@@ -27,16 +27,15 @@ public class AICarsSpawner : MonoBehaviour {
 
     IEnumerator SpawnCars()
     {
-        while(carsCount < 12)
+        while(carsCount < 50)
         {
-            yield return new WaitForSeconds(2);
             InstantiateCar();
+            yield return new WaitForSeconds(3);
         }
     }
 
     private void InstantiateCar()
     {
-        int randomCarType = (int)(Random.Range(0, cars.Length - 1));
         carPath = carsPaths[randomIndex];
         carStartPosition = spawningPoints[randomIndex].position;
         carStartRotation = spawningPoints[randomIndex].rotation;
@@ -47,10 +46,16 @@ public class AICarsSpawner : MonoBehaviour {
         carController.path = carPath;
         carsCount++;
         randomIndex++;
+        randomCarType++;
 
         if (randomIndex == spawningPoints.Length)
         {
             randomIndex = 0;
+        }
+
+        if (randomCarType == cars.Length)
+        {
+            randomCarType = 0;
         }
     }
 }

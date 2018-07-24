@@ -1061,7 +1061,7 @@ MonoBehaviour:
   wheelFR: {fileID: 146255275219496528}
   wheelRL: {fileID: 146254752618399392}
   wheelRR: {fileID: 146763539626712082}
-  maxMotorTorque: 80
+  maxMotorTorque: 50
   maxBrakingTorque: 200
   currentSpeed: 0
   maxSpeed: 80

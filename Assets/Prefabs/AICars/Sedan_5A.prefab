@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 114762905824095152}
   m_Layer: 0
   m_Name: Sedan_5A
-  m_TagString: Untagged
+  m_TagString: AICar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -726,10 +726,10 @@ MonoBehaviour:
   wheelFR: {fileID: 146205712608538796}
   wheelRL: {fileID: 146500571648438642}
   wheelRR: {fileID: 146907707560183488}
-  maxMotorTorque: 80
+  maxMotorTorque: 50
   maxBrakingTorque: 200
   currentSpeed: 0
-  maxSpeed: 100
+  maxSpeed: 80
   isBraking: 0
   sensorLength: 5
   frontSensorOffset: {x: 1.15, y: 0.75, z: 2.8}

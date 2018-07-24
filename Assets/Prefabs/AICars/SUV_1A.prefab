@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114509874722970546}
   m_Layer: 0
   m_Name: SUV_1A
-  m_TagString: Untagged
+  m_TagString: AICar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -702,7 +702,7 @@ MonoBehaviour:
   wheelFR: {fileID: 146622633984552308}
   wheelRL: {fileID: 146425025829110996}
   wheelRR: {fileID: 146721149823378036}
-  maxMotorTorque: 100
+  maxMotorTorque: 50
   maxBrakingTorque: 200
   currentSpeed: 0
   maxSpeed: 80

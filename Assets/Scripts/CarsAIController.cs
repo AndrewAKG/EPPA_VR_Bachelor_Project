@@ -11,15 +11,15 @@ public class CarsAIController : MonoBehaviour {
 
     public Transform path;
     [Header("Car Engine")]
-    public float maxSteeringAngle = 45f;
+    public float maxSteeringAngle;
     public WheelCollider wheelFL;
     public WheelCollider wheelFR;
     public WheelCollider wheelRL;
     public WheelCollider wheelRR;
-    public float maxMotorTorque = 50f;
-    public float maxBrakingTorque = 200f;
+    public float maxMotorTorque;
+    public float maxBrakingTorque;
     public float currentSpeed;
-    public float maxSpeed = 80f;
+    public float maxSpeed;
     public bool isBraking = false;
 
     [Header("Sensors")]
@@ -82,7 +82,7 @@ public class CarsAIController : MonoBehaviour {
                 int trafficState = light.getState();
 
                 float angle = Vector3.Angle(collisionObject.transform.forward, transform.position - collisionObject.transform.position);
-                print(angle);
+                //print(angle);
                 bool frontFacing = angle <= 20;
 
                 if ((trafficState == 1 || trafficState == 2) && frontFacing)
@@ -111,7 +111,7 @@ public class CarsAIController : MonoBehaviour {
                 int trafficState = light.getState();
 
                 float angle = Vector3.Angle(collisionObject.transform.forward, transform.position - collisionObject.transform.position);
-                print(angle);
+                //print(angle);
                 bool frontFacing = angle <= 20;
 
                 if ((trafficState == 1 || trafficState == 2) && frontFacing)
@@ -140,7 +140,7 @@ public class CarsAIController : MonoBehaviour {
                 int trafficState = light.getState();
 
                 float angle = Vector3.Angle(collisionObject.transform.forward, transform.position - collisionObject.transform.position);
-                print(angle);
+                //print(angle);
                 bool frontFacing = angle <= 20;
 
                 if ((trafficState == 1 || trafficState == 2) && frontFacing)
@@ -181,14 +181,10 @@ public class CarsAIController : MonoBehaviour {
         {
             wheelFL.motorTorque = maxMotorTorque;
             wheelFR.motorTorque = maxMotorTorque;
-            wheelRL.motorTorque = maxMotorTorque;
-            wheelRR.motorTorque = maxMotorTorque;
         } else
         {
             wheelFL.motorTorque = 0;
             wheelFR.motorTorque = 0;
-            wheelRL.motorTorque = 0;
-            wheelRR.motorTorque = 0;
         }
     }
 

@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 114191177691713056}
   m_Layer: 0
   m_Name: Van_2B
-  m_TagString: Untagged
+  m_TagString: AICar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -866,10 +866,10 @@ MonoBehaviour:
   wheelFR: {fileID: 146104157151320428}
   wheelRL: {fileID: 146792745780644066}
   wheelRR: {fileID: 146517002749388554}
-  maxMotorTorque: 100
-  maxBrakingTorque: 250
+  maxMotorTorque: 50
+  maxBrakingTorque: 200
   currentSpeed: 0
-  maxSpeed: 100
+  maxSpeed: 80
   isBraking: 0
   sensorLength: 5
   frontSensorOffset: {x: 1.4, y: 1.05, z: 2.8}
