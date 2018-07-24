@@ -12,6 +12,7 @@ public class AICarsSpawner : MonoBehaviour {
     private int carsCount = 0;
     private int randomIndex = 0;
     private int randomCarType = 0;
+    private bool started = false;
 
     [SerializeField]
     public Transform[] spawningPoints;
@@ -22,6 +23,7 @@ public class AICarsSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        started = true;
         StartCoroutine(SpawnCars());
 	}
 
@@ -80,7 +82,10 @@ public class AICarsSpawner : MonoBehaviour {
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(spawningPoints[randomIndex].position, 6.1f);
+        if (started)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(spawningPoints[randomIndex].position, 6.1f);
+        }
     }
 }

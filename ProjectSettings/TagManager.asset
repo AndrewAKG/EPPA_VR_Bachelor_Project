@@ -25,6 +25,7 @@ TagManager:
   - AIPedestrian
   - TLSHC
   - TLSVC
+  - TLSPC
   layers:
   - Default
   - TransparentFX
