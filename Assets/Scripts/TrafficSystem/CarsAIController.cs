@@ -97,6 +97,12 @@ public class CarsAIController : MonoBehaviour {
                 isBraking = true;
                 carStateChanged = true;
             }
+
+            if (hit.collider.gameObject.CompareTag("AIPedestrian"))
+            {
+                isBraking = true;
+                carStateChanged = true;
+            }
         }
 
         // front right sensor
@@ -126,6 +132,12 @@ public class CarsAIController : MonoBehaviour {
                 isBraking = true;
                 carStateChanged = true;
             }
+
+            if (hit.collider.gameObject.CompareTag("AIPedestrian"))
+            {
+                isBraking = true;
+                carStateChanged = true;
+            }
         }
 
         // front left sensor
@@ -151,6 +163,12 @@ public class CarsAIController : MonoBehaviour {
             }
 
             if (hit.collider.gameObject.CompareTag("AICar"))
+            {
+                isBraking = true;
+                carStateChanged = true;
+            }
+
+            if (hit.collider.gameObject.CompareTag("AIPedestrian"))
             {
                 isBraking = true;
                 carStateChanged = true;
