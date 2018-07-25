@@ -30,10 +30,10 @@ public class AIPedestriansSpawner : MonoBehaviour {
 
     IEnumerator SpawnPedestrians()
     {
-        while (pedestriansCount < 10)
+        while (pedestriansCount < 100)
         {
             InstantiatePedestrian();
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1);
         }
     }
 
