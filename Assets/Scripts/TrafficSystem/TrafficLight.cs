@@ -1,0 +1,41 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TrafficLight : MonoBehaviour {
+
+    private Renderer rend;
+    Material m_red;
+    Material m_yellow;
+    Material m_green;
+    private int state = 0;
+
+    public int getState()
+    {
+        return state;
+    }
+
+    public void setState(int state)
+    {
+        this.state = state;
+    }
+
+    // Use this for initialization
+    void Start () {
+        rend = GetComponent<Renderer>();
+        m_red = Resources.Load("TL_red") as Material;
+        m_yellow = Resources.Load("TL_yellow") as Material;
+        m_green = Resources.Load("TL_green") as Material;
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        switch (state)
+        {
+            case 1: rend.material = m_red; break;
+            case 2: rend.material = m_yellow; break;
+            case 3: rend.material = m_green; break;
+            default: rend.material = m_red; break;
+        }
+	}
+}
