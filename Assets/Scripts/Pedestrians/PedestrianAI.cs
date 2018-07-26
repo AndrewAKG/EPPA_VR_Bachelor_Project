@@ -13,7 +13,8 @@ public class PedestrianAI : MonoBehaviour {
     private bool pedestrianStateChanged = false;
     private int size;
     private Vector3 sensorOrigin;
-    private Vector3 sensorOffset = new Vector3(0f, 0.9f, 0.3f);
+    private Vector3 sensorOffset = new Vector3(0f, 0.9f, 0.1f);
+    private float frontSensorAngle = 30f;
 
     // Use this for initialization
     void Start () {
@@ -61,6 +62,44 @@ public class PedestrianAI : MonoBehaviour {
         sensorOrigin += transform.up * sensorOffset.y;
 
         if (Physics.Raycast(sensorOrigin, fwd, out hit, 2f))
+        {
+            if (hit.collider.gameObject.CompareTag("TLSPC"))
+            {
+                GameObject collisionObject = hit.collider.gameObject;
+                GameObject collisionObjectParent = collisionObject.transform.parent.gameObject;
+                PedestrianLight light = collisionObjectParent.GetComponent<PedestrianLight>();
+                int trafficState = light.getState();
+
+                if (trafficState == 1)
+                {
+                    Debug.DrawLine(sensorOrigin, hit.point);
+                    anim.SetBool("walking", false);
+                    agent.isStopped = true;
+                    pedestrianStateChanged = true;
+                }
+            }
+        }
+
+        if (Physics.Raycast(sensorOrigin, Quaternion.AngleAxis(frontSensorAngle, transform.up) * transform.forward, out hit, 2f))
+        {
+            if (hit.collider.gameObject.CompareTag("TLSPC"))
+            {
+                GameObject collisionObject = hit.collider.gameObject;
+                GameObject collisionObjectParent = collisionObject.transform.parent.gameObject;
+                PedestrianLight light = collisionObjectParent.GetComponent<PedestrianLight>();
+                int trafficState = light.getState();
+
+                if (trafficState == 1)
+                {
+                    Debug.DrawLine(sensorOrigin, hit.point);
+                    anim.SetBool("walking", false);
+                    agent.isStopped = true;
+                    pedestrianStateChanged = true;
+                }
+            }
+        }
+
+        if (Physics.Raycast(sensorOrigin, Quaternion.AngleAxis(-frontSensorAngle, transform.up) * transform.forward, out hit, 2f))
         {
             if (hit.collider.gameObject.CompareTag("TLSPC"))
             {

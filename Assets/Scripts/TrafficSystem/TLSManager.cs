@@ -10,7 +10,7 @@ public class TLSManager : MonoBehaviour {
     private int redSeconds = 20;
     private int yellowSeconds = 3;
     private int greenSeconds = 20;
-    private int pedestrianSeconds = 20;
+    private int pedestrianSeconds = 10;
 
     void Start()
     {

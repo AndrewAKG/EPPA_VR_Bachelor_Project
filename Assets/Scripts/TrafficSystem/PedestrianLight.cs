@@ -7,7 +7,7 @@ public class PedestrianLight : MonoBehaviour {
     private Renderer rend;
     Material m_red;
     Material m_green;
-    private int state = 0;
+    private int state = 1;
 
     public int getState()
     {
