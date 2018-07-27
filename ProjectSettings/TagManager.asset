@@ -26,6 +26,7 @@ TagManager:
   - TLSHC
   - TLSVC
   - TLSPC
+  - Supermarket
   layers:
   - Default
   - TransparentFX

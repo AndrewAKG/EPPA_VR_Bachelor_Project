@@ -33,7 +33,7 @@ public class AIPedestriansSpawner : MonoBehaviour {
         while (pedestriansCount < 100)
         {
             InstantiatePedestrian();
-            yield return new WaitForSeconds(1);
+            yield return null;
         }
     }
 

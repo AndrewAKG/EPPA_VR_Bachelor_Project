@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MapGrid : MonoBehaviour
-{
+public class MapGrid : MonoBehaviour {
+
     public bool onlyDisplayPathGizmos;
     public LayerMask unwalkableMask;
     public Vector2 gridWorldSize;
@@ -23,7 +23,10 @@ public class MapGrid : MonoBehaviour
 
     public int MaxSize
     {
-        get { return gridSizeX * gridSizeY; }
+        get
+        {
+            return gridSizeX * gridSizeY;
+        }
     }
 
     void CreateGrid()
@@ -46,7 +49,7 @@ public class MapGrid : MonoBehaviour
     {
         List<Node> neighbours = new List<Node>();
 
-        for(int x = -1; x <= 1; x++)
+        for (int x = -1; x <= 1; x++)
         {
             for (int y = -1; y <= 1; y++)
             {
@@ -56,7 +59,8 @@ public class MapGrid : MonoBehaviour
                 int checkX = node.gridX + x;
                 int checkY = node.gridY + y;
 
-                if(checkX >= 0 && checkX < gridSizeX && checkY >= 0 &&  checkY < gridSizeY) {
+                if (checkX >= 0 && checkX < gridSizeX && checkY >= 0 && checkY < gridSizeY)
+                {
                     neighbours.Add(grid[checkX, checkY]);
                 }
             }
@@ -95,7 +99,6 @@ public class MapGrid : MonoBehaviour
         }
         else
         {
-
             if (grid != null)
             {
                 foreach (Node n in grid)
