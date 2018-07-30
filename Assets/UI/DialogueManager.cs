@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour {
 
     public Text nameText;
     public Text dialogueText;
+    public GameObject levelLoader;
 
     public Animator animator;
 
@@ -60,5 +62,6 @@ public class DialogueManager : MonoBehaviour {
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        levelLoader.GetComponent<LevelLoader>().LoadSimulatorScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
