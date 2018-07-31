@@ -8,7 +8,8 @@ public class CameraControl : MonoBehaviour {
     public Animator agentAnim;
     public Transform player;
     public AgentController controller;
-    //private bool once = false; 
+    private bool once = false;
+    bool x = true;
 
     [SerializeField]
     private Transform target;
@@ -29,60 +30,43 @@ public class CameraControl : MonoBehaviour {
 
     private void Start()
     {
-        //if (agent != null)
-        //    setTarget(agent);
+        if (agent != null)
+            setTarget(agent);
     }
 
-    IEnumerator Delay()
+    void Delay()
     {
-        Debug.Log("1");
-        bool x = true;
-        while (x)
+        controller.getAgent().isStopped = true;
+        //this.lookAt = true;
+        //agentAnim.SetBool("Finished", true);
+        //yield return new WaitForSeconds(10);
+        once = true;
+        //this.lookAt = false;
+        setTarget(player);
+        agent.transform.localScale = Vector3.zero;
+    }
+
+    private void Update()
+    {
+        if (!once)
         {
-            controller.getAgent().isStopped = true;
-            agentAnim.Play("M_idle1");
-            Debug.Log("2");
-            yield return new WaitForSeconds(2.0f);
-            Debug.Log("3");
-            agentAnim.Play("M_turnR90");
-            Debug.Log("4");
-            agentAnim.Play("M_turnR90");
-            Debug.Log("5");
-            yield return new WaitForSeconds(2.0f);
-            Debug.Log("6");
-            agentAnim.Play("M_clap");
-            Debug.Log("7");
-            yield return new WaitForSeconds(2.0f);
-            Debug.Log("8");
-            x = false;
+            if (controller != null)
+            {
+                if (controller.isFinished())
+                {
+                    if (player != null)
+                    {
+                        Delay();    
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogError("Controller Null");
+            }
         }
     }
 
-    //private void Update()
-    //{
-    //    if (!once)
-    //    {
-    //        if (controller != null)
-    //        {
-    //            if (controller.isFinished())
-    //            {
-    //                if (player != null)
-    //                {
-    //                    //StartCoroutine(Delay());
-    //                    setTarget(player);
-    //                    once = true;
-    //                }
-
-    //                agent.transform.localScale = new Vector3(0, 0, 0);
-    //            }
-    //        }
-    //        else
-    //        {
-    //            Debug.LogError("Controller Null");
-    //        }
-    //    }
-    //}
-        
 
     private void LateUpdate()
     { 

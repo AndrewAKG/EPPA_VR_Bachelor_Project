@@ -30,7 +30,7 @@ public class AgentController : MonoBehaviour
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
-        anim.Play("M_walk");
+        anim.SetBool("IsWalking", true);
         GoToSupermarket();
     }
 
@@ -54,6 +54,7 @@ public class AgentController : MonoBehaviour
         {
             //Debug.Log(destPoint);
             //agent.isStopped = true;
+            anim.SetBool("IsWalking", false);
             finished = true;
         }
 
