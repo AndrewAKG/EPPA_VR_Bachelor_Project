@@ -34,15 +34,16 @@ public class CameraControl : MonoBehaviour {
             setTarget(agent);
     }
 
-    IEnumerator Delay()
+    void Delay()
     {
         controller.getAgent().isStopped = true;
-        agentAnim.Play("M_idle1");
-        yield return new WaitForSeconds(2.0f);
-        agentAnim.Play("M_turnR90");
-        yield return new WaitForSeconds(2.0f);
-        agentAnim.Play("M_clap");
-        yield return new WaitForSeconds(2.0f);
+        //this.lookAt = true;
+        //agentAnim.SetBool("Finished", true);
+        //yield return new WaitForSeconds(10);
+        once = true;
+        //this.lookAt = false;
+        setTarget(player);
+        agent.transform.localScale = Vector3.zero;
     }
 
     private void Update()
@@ -55,12 +56,8 @@ public class CameraControl : MonoBehaviour {
                 {
                     if (player != null)
                     {
-                        //StartCoroutine(Delay());
-                        setTarget(player);
-                        once = true;
+                        Delay();    
                     }
-
-                    agent.transform.localScale = new Vector3(0, 0, 0);
                 }
             }
             else
