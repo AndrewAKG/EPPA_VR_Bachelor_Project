@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class PlayerPathAI : MonoBehaviour {
 
-    Transform player, target;
-    Vector3[] path;
-    PathFinding pathFinder;
+    private Transform player, target;
+    private Vector3[] path;
+    private PathFinding pathFinder;
+    private GameObject agentCanvas;
+    private GameObject agent;
+    private bool showAgentCanvas = false;
 
     // Use this for initialization
     void Start () {
         pathFinder = GetComponent<PathFinding>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = GameObject.FindGameObjectWithTag("Supermarket").transform;
+        agentCanvas = GameObject.FindGameObjectWithTag("AgentCanvas");
+        agent = GameObject.FindGameObjectWithTag("Agent");
     }
 
     // Update is called once per frame
     void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("d5al");
             path = pathFinder.FindPath(player.position, target.position);
             if(path.Length > 0)
             {
@@ -30,6 +34,17 @@ public class PlayerPathAI : MonoBehaviour {
                 print("ml2ysh");
             }
         }
+
+        if (showAgentCanvas)
+        {
+            agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+            agent.transform.localScale = Vector3.one;
+        }
+        else
+        {
+            agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+            agent.transform.localScale = Vector3.zero;
+        }
     }
 
     public void OnPathFound(Vector3[] newPath)
@@ -38,6 +53,7 @@ public class PlayerPathAI : MonoBehaviour {
         path = newPath;
         Vector3 heading = path[0] - player.position;
         int direction = AngleDir(transform.forward, heading, transform.up);
+        showAgentCanvas = true;
 
         switch (direction)
         {
@@ -46,6 +62,8 @@ public class PlayerPathAI : MonoBehaviour {
             case 0: print("Go Straight"); break;
             default: print("Nothing");break;
         }
+
+
     }
 
     int AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up)
