@@ -34,29 +34,29 @@ public class PlayerPathAI : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (showAgentCanvas)
         {
-            path = pathFinder.FindPath(player.position, target.position);
-            if(path.Length > 0)
-            {
-                StartCoroutine(OnPathFound(path));
-            }
-            else
-            {
-                print("No Path Found");
-            }
+            agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+            agent.transform.localScale = Vector3.one;
         }
+        else
+        {
+            agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+            agent.transform.localScale = Vector3.zero;
+        }
+    }
 
-        //if (showAgentCanvas)
-        //{
-        //    agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
-        //    agent.transform.localScale = Vector3.one;
-        //}
-        //else
-        //{
-        //    agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
-        //    agent.transform.localScale = Vector3.zero;
-        //}
+    public void GoFindPath()
+    {
+        path = pathFinder.FindPath(player.position, target.position);
+        if (path.Length > 0)
+        {
+            StartCoroutine(OnPathFound(path));
+        }
+        else
+        {
+            print("No Path Found");
+        }
     }
 
     IEnumerator OnPathFound(Vector3[] newPath)
@@ -99,6 +99,7 @@ public class PlayerPathAI : MonoBehaviour {
                 break;
         }
 
+        showAgentCanvas = false;
         yield return null;
     }
 
