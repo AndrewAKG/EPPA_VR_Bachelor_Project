@@ -30,8 +30,16 @@ public class CameraControl : MonoBehaviour {
 
     private void Start()
     {
+        StartCoroutine(CameraToAgent());
+    }
+
+    IEnumerator CameraToAgent()
+    {
         if (agent != null)
             setTarget(agent);
+
+        yield return new WaitForSeconds(5);
+        agent.GetComponent<AgentController>().enabled = true;
     }
 
     void Delay()
