@@ -43,7 +43,7 @@ public class PlayerPathAI : MonoBehaviour {
             }
             else
             {
-                print("ml2ysh");
+                print("No Path Found");
             }
         }
 
@@ -62,11 +62,13 @@ public class PlayerPathAI : MonoBehaviour {
     IEnumerator OnPathFound(Vector3[] newPath)
     {
         path = newPath;
-        Vector3 heading = target.position - player.position;
-        int direction = AngleDir(player.forward, heading, player.up);
+        Vector3 destinationHeading = target.position - player.position;
+        Vector3 nearestNodeHeading = path[0] - player.position;
+        int destinationDirection = AngleDir(player.forward, destinationHeading, player.up);
+        int nearestNodeDirection = AngleDir(player.forward, nearestNodeHeading, player.up);
         showAgentCanvas = true;
 
-        switch (direction)
+        switch (destinationDirection)
         {
             case -1:
                 agent.GetComponent<Animator>().SetBool("FoundPath", true);
@@ -104,6 +106,7 @@ public class PlayerPathAI : MonoBehaviour {
     {
         Vector3 perp = Vector3.Cross(fwd, targetDir);
         float dir = Vector3.Dot(perp, up);
+        print(dir);
 
         if (dir > 0f)
         {
