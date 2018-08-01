@@ -12,6 +12,9 @@ public class CameraControl : MonoBehaviour {
     bool x = true;
 
     [SerializeField]
+    private AudioSource startsound;
+
+    [SerializeField]
     private Transform target;
 
     [SerializeField]
@@ -38,7 +41,8 @@ public class CameraControl : MonoBehaviour {
         if (agent != null)
             setTarget(agent);
 
-        yield return new WaitForSeconds(5);
+        startsound.Play();
+        yield return new WaitForSeconds(8.5f);
         agent.GetComponent<AgentController>().enabled = true;
     }
 
