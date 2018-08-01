@@ -722,6 +722,7 @@ GameObject:
   - component: {fileID: 95746387290389190}
   - component: {fileID: 114348939888824402}
   - component: {fileID: 195456521185817768}
+  - component: {fileID: 136688603199155482}
   m_Layer: 0
   m_Name: TPMaleB (7)
   m_TagString: AIPedestrian
@@ -3100,6 +3101,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 0}
+--- !u!136 &136688603199155482
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439135912401296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.28
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0.01, y: 0.75, z: -0.000000002870169}
 --- !u!137 &137011004496317832
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -4376,7 +4390,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.7
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
