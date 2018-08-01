@@ -11,6 +11,18 @@ public class PlayerPathAI : MonoBehaviour {
     private GameObject agent;
     private bool showAgentCanvas = false;
 
+    [SerializeField]
+    private AudioSource hi;
+
+    [SerializeField]
+    private AudioSource left;
+
+    [SerializeField]
+    private AudioSource right;
+
+    [SerializeField]
+    private AudioSource straight;
+
     // Use this for initialization
     void Start () {
         pathFinder = GetComponent<PathFinding>();
@@ -27,7 +39,7 @@ public class PlayerPathAI : MonoBehaviour {
             path = pathFinder.FindPath(player.position, target.position);
             if(path.Length > 0)
             {
-                OnPathFound(path);
+                StartCoroutine(OnPathFound(path));
             }
             else
             {
@@ -35,19 +47,19 @@ public class PlayerPathAI : MonoBehaviour {
             }
         }
 
-        if (showAgentCanvas)
-        {
-            agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
-            agent.transform.localScale = Vector3.one;
-        }
-        else
-        {
-            agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
-            agent.transform.localScale = Vector3.zero;
-        }
+        //if (showAgentCanvas)
+        //{
+        //    agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+        //    agent.transform.localScale = Vector3.one;
+        //}
+        //else
+        //{
+        //    agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+        //    agent.transform.localScale = Vector3.zero;
+        //}
     }
 
-    public void OnPathFound(Vector3[] newPath)
+    IEnumerator OnPathFound(Vector3[] newPath)
     {
         print("d5alsucs");
         path = newPath;
@@ -57,13 +69,39 @@ public class PlayerPathAI : MonoBehaviour {
 
         switch (direction)
         {
-            case -1: print("Go Left");break;
-            case 1: print("Go Right"); break;
-            case 0: print("Go Straight"); break;
-            default: print("Nothing");break;
+            case -1:
+                print("Go Left");
+                agent.GetComponent<Animator>().SetBool("FoundPath", true);
+                hi.Play();
+                yield return new WaitForSeconds(1);
+                left.Play();
+                yield return new WaitForSeconds(2);
+                agent.GetComponent<Animator>().SetBool("FoundPath", false);
+                break;
+            case 1:
+                print("Go Right");
+                agent.GetComponent<Animator>().SetBool("FoundPath", true);
+                hi.Play();
+                yield return new WaitForSeconds(1);
+                right.Play();
+                yield return new WaitForSeconds(1.5f);
+                agent.GetComponent<Animator>().SetBool("FoundPath", false);
+                break;
+            case 0:
+                print("Go Straight");
+                agent.GetComponent<Animator>().SetBool("FoundPath", true);
+                hi.Play();
+                yield return new WaitForSeconds(1);
+                straight.Play();
+                yield return new WaitForSeconds(2);
+                agent.GetComponent<Animator>().SetBool("FoundPath", false);
+                break;
+            default:
+                print("Nothing");
+                break;
         }
 
-
+        yield return null;
     }
 
     int AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up)
