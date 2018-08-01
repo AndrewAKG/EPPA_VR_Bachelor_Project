@@ -61,16 +61,14 @@ public class PlayerPathAI : MonoBehaviour {
 
     IEnumerator OnPathFound(Vector3[] newPath)
     {
-        print("d5alsucs");
         path = newPath;
-        Vector3 heading = path[0] - player.position;
-        int direction = AngleDir(transform.forward, heading, transform.up);
+        Vector3 heading = target.position - player.position;
+        int direction = AngleDir(player.forward, heading, player.up);
         showAgentCanvas = true;
 
         switch (direction)
         {
             case -1:
-                print("Go Left");
                 agent.GetComponent<Animator>().SetBool("FoundPath", true);
                 hi.Play();
                 yield return new WaitForSeconds(1);
@@ -79,7 +77,6 @@ public class PlayerPathAI : MonoBehaviour {
                 agent.GetComponent<Animator>().SetBool("FoundPath", false);
                 break;
             case 1:
-                print("Go Right");
                 agent.GetComponent<Animator>().SetBool("FoundPath", true);
                 hi.Play();
                 yield return new WaitForSeconds(1);
@@ -88,7 +85,6 @@ public class PlayerPathAI : MonoBehaviour {
                 agent.GetComponent<Animator>().SetBool("FoundPath", false);
                 break;
             case 0:
-                print("Go Straight");
                 agent.GetComponent<Animator>().SetBool("FoundPath", true);
                 hi.Play();
                 yield return new WaitForSeconds(1);
