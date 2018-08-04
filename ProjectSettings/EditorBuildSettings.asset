@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartScene.unity
     guid: 8d7b2ff38a60f094ab59976657dfd22d
   - enabled: 1
-    path: Assets/Scenes/CityDay.unity
-    guid: c5c99f816a81f194f806cdc9d96e5472
-  - enabled: 1
+    path: Assets/Scenes/MainCity.unity
+    guid: 8aa49dda62ef77b4ca2f5e0587924589
+  - enabled: 0
     path: Assets/Scenes/Supermarket.unity
     guid: e8a38ce024bda0649bc6f5f575f35bd3
   m_configObjects: {}

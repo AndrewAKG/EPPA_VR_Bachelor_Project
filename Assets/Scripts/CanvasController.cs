@@ -18,7 +18,7 @@ public class CanvasController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            showAgentCanvas = !showAgentCanvas;
+            showAgent();
         }
 
         if (Input.GetKeyDown(KeyCode.A))
@@ -36,6 +36,10 @@ public class CanvasController : MonoBehaviour {
             agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
             agent.transform.localScale = Vector3.zero;
         }
-		
 	}
+
+    public void showAgent()
+    {
+        showAgentCanvas = !showAgentCanvas;
+    }
 }

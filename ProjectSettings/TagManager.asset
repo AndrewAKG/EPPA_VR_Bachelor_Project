@@ -27,6 +27,15 @@ TagManager:
   - TLSVC
   - TLSPC
   - Supermarket
+  - Juice
+  - Wine
+  - Milk
+  - Cheese
+  - Fish
+  - Meat
+  - Pizza
+  - Cookies
+  - Coffee
   layers:
   - Default
   - TransparentFX
