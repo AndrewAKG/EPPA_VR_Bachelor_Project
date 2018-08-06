@@ -10,6 +10,11 @@ public class PlayerPathAI : MonoBehaviour {
     private GameObject agentCanvas;
     private GameObject agent;
     private bool showAgentCanvas = false;
+    private Vector3 sensorOrigin;
+    private Vector3 sensorOffset = new Vector3(0f, 0.9f, 0.1f);
+    private float frontSensorAngle = 30f;
+    CapsuleCollider playerCollider;
+    Collider other;
 
     [SerializeField]
     private AudioSource hi;
@@ -23,10 +28,14 @@ public class PlayerPathAI : MonoBehaviour {
     [SerializeField]
     private AudioSource straight;
 
+    [SerializeField]
+    private AudioSource pedestrianRed;
+
     // Use this for initialization
     void Start () {
         pathFinder = GetComponent<PathFinding>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerCollider = player.GetComponent<CapsuleCollider>();
         target = GameObject.FindGameObjectWithTag("Supermarket").transform;
         agentCanvas = GameObject.FindGameObjectWithTag("AgentCanvas");
         agent = GameObject.FindGameObjectWithTag("Agent");
@@ -44,6 +53,40 @@ public class PlayerPathAI : MonoBehaviour {
             agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
             agent.transform.localScale = Vector3.zero;
         }
+            
+        //RaycastHit hit;
+        //Vector3 fwd = player.transform.TransformDirection(Vector3.forward);
+        //sensorOrigin = player.transform.position;
+        //sensorOrigin += player.transform.forward * sensorOffset.z;
+        //sensorOrigin += player.transform.up * sensorOffset.y;
+
+        //if (Physics.Raycast(sensorOrigin, fwd, out hit, 1f))
+        //{
+        //    if (hit.collider.gameObject.CompareTag("TLSPC"))
+        //    {
+        //        GameObject collisionObject = hit.collider.gameObject;
+        //        GameObject collisionObjectParent = collisionObject.transform.parent.gameObject;
+        //        PedestrianLight light = collisionObjectParent.GetComponent<PedestrianLight>();
+        //        int trafficState = light.getState();
+
+        //        if (trafficState == 1)
+        //        {
+        //            Debug.DrawLine(sensorOrigin, hit.point);
+        //            StartCoroutine(WarnRedLight());
+        //        }
+        //    }
+        //}
+    }
+
+    IEnumerator WarnRedLight()
+    {
+        showAgentCanvas = true;
+        agent.GetComponent<Animator>().SetBool("RedLight", true);
+        pedestrianRed.Play();
+        yield return new WaitForSeconds(5);
+        agent.GetComponent<Animator>().SetBool("RedLight", false);
+        yield return new WaitForSeconds(1);
+        showAgentCanvas = false;
     }
 
     public void GoFindPath()
@@ -65,7 +108,7 @@ public class PlayerPathAI : MonoBehaviour {
         Vector3 destinationHeading = target.position - player.position;
         Vector3 nearestNodeHeading = path[0] - player.position;
         int destinationDirection = AngleDir(player.forward, destinationHeading, player.up);
-        int nearestNodeDirection = AngleDir(player.forward, nearestNodeHeading, player.up);
+        //int nearestNodeDirection = AngleDir(player.forward, nearestNodeHeading, player.up);
         showAgentCanvas = true;
 
         switch (destinationDirection)
@@ -96,11 +139,12 @@ public class PlayerPathAI : MonoBehaviour {
                 break;
             default:
                 print("Nothing");
+                yield return null;
                 break;
         }
 
+        yield return new WaitForSeconds(1);
         showAgentCanvas = false;
-        yield return null;
     }
 
     int AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up)

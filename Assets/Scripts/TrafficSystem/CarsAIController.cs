@@ -98,11 +98,11 @@ public class CarsAIController : MonoBehaviour {
                 carStateChanged = true;
             }
 
-            if (hit.collider.gameObject.CompareTag("AIPedestrian"))
-            {
-                isBraking = true;
-                carStateChanged = true;
-            }
+            //if (hit.collider.gameObject.CompareTag("AIPedestrian"))
+            //{
+            //    isBraking = true;
+            //    carStateChanged = true;
+            //}
 
             if (hit.collider.gameObject.CompareTag("Player"))
             {
@@ -139,11 +139,11 @@ public class CarsAIController : MonoBehaviour {
                 carStateChanged = true;
             }
 
-            if (hit.collider.gameObject.CompareTag("AIPedestrian"))
-            {
-                isBraking = true;
-                carStateChanged = true;
-            }
+            //if (hit.collider.gameObject.CompareTag("AIPedestrian"))
+            //{
+            //    isBraking = true;
+            //    carStateChanged = true;
+            //}
 
             if (hit.collider.gameObject.CompareTag("Player"))
             {
@@ -180,11 +180,11 @@ public class CarsAIController : MonoBehaviour {
                 carStateChanged = true;
             }
 
-            if (hit.collider.gameObject.CompareTag("AIPedestrian"))
-            {
-                isBraking = true;
-                carStateChanged = true;
-            }
+            //if (hit.collider.gameObject.CompareTag("AIPedestrian"))
+            //{
+            //    isBraking = true;
+            //    carStateChanged = true;
+            //}
 
             if (hit.collider.gameObject.CompareTag("Player"))
             {
