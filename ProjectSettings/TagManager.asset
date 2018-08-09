@@ -41,6 +41,7 @@ TagManager:
   - AppleJuice
   - CherryJuice
   - LemonJuice
+  - Fruit
   layers:
   - Default
   - TransparentFX
