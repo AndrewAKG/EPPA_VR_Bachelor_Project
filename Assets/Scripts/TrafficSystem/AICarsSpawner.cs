@@ -68,7 +68,7 @@ public class AICarsSpawner : MonoBehaviour {
 
     public bool checkIfPosEmpty(Vector3 targetPos)
     {
-        var hitColliders = Physics.OverlapSphere(targetPos, 5);
+        var hitColliders = Physics.OverlapSphere(targetPos, 6.1f);
         if (hitColliders.Length > 0)
         {
             foreach(Collider hitCollider in hitColliders)
