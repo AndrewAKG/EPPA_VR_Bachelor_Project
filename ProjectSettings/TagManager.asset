@@ -42,6 +42,7 @@ TagManager:
   - CherryJuice
   - LemonJuice
   - Fruit
+  - Butter
   layers:
   - Default
   - TransparentFX
