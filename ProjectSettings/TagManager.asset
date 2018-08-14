@@ -43,6 +43,8 @@ TagManager:
   - LemonJuice
   - Fruit
   - Butter
+  - PizzaMozzarella
+  - CheesePizza
   layers:
   - Default
   - TransparentFX
