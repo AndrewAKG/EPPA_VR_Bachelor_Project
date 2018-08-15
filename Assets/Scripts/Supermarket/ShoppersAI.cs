@@ -45,7 +45,6 @@ public class ShoppersAI : MonoBehaviour {
     private void GoToNextNode()
     {
         agent.destination = nodes[currentNode].position;
-        print(++i);
         currentNode += 1;
 
         if (currentNode == nodes.Count)
@@ -72,7 +71,7 @@ public class ShoppersAI : MonoBehaviour {
             if (hit.collider.gameObject.CompareTag("AIShopper") || hit.collider.gameObject.CompareTag("AICart"))
             {
                 Debug.DrawLine(sensorOrigin, hit.point);
-                print(hit.collider.gameObject);
+               // print(hit.collider.gameObject);
                 anim.SetBool("walking", false);
                 agent.isStopped = true;
             }     

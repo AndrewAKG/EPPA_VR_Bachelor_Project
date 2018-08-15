@@ -46,6 +46,7 @@ TagManager:
   - Butter
   - PizzaMozzarella
   - CheesePizza
+  - Tee
   layers:
   - Default
   - TransparentFX

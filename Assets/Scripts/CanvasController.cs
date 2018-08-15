@@ -21,11 +21,6 @@ public class CanvasController : MonoBehaviour {
             showAgent();
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Animator animator = agent.GetComponent<Animator>();
-        }
-
         if (showAgentCanvas)
         {
             agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
