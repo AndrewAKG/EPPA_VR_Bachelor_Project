@@ -23,8 +23,8 @@ public class PedestrianLight : MonoBehaviour {
     void Start()
     {
         rend = GetComponent<Renderer>();
-        m_red = Resources.Load("TL_red") as Material;
-        m_green = Resources.Load("NewMaterial") as Material;
+        m_red = Resources.Load("TLS_Red") as Material;
+        m_green = Resources.Load("TLS_Green") as Material;
     }
 
     // Update is called once per frame

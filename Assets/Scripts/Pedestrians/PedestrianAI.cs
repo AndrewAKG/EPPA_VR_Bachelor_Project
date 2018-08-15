@@ -78,6 +78,14 @@ public class PedestrianAI : MonoBehaviour {
                     pedestrianStateChanged = true;
                 }
             }
+
+            if (hit.collider.gameObject.CompareTag("AICar"))
+            {
+                Debug.DrawLine(sensorOrigin, hit.point);
+                anim.SetBool("walking", false);
+                agent.isStopped = true;
+                pedestrianStateChanged = true;
+            }
         }
 
         if (Physics.Raycast(sensorOrigin, Quaternion.AngleAxis(frontSensorAngle, transform.up) * transform.forward, out hit, 2f))
@@ -117,10 +125,12 @@ public class PedestrianAI : MonoBehaviour {
                 }
             }
         }
+
         if (!agent.pathPending && agent.remainingDistance < 0.5f && !pedestrianStateChanged)
         {
             GotoNextPoint();
         }
+
         if (!pedestrianStateChanged && agent.isStopped)
         {
             agent.isStopped = false;
