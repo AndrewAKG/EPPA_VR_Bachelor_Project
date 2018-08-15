@@ -716,6 +716,7 @@ GameObject:
   - component: {fileID: 95136197939665410}
   - component: {fileID: 195712580667159320}
   - component: {fileID: 114531722467168670}
+  - component: {fileID: 136568737943455938}
   m_Layer: 0
   m_Name: TPFemaleB (18)
   m_TagString: Untagged
@@ -3043,6 +3044,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 0}
+--- !u!136 &136568737943455938
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1535065309507890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.28
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0.01, y: 0.75, z: -0.000000002870169}
 --- !u!137 &137033882787371232
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -4603,7 +4617,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.7
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

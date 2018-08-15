@@ -16,6 +16,7 @@ public class ShoppersAI : MonoBehaviour {
     private Vector3 originalPos;
     private Vector3 sensorOrigin;
     private Vector3 sensorOffset = new Vector3(0f, 0.9f, 0.3f);
+    int i = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -30,15 +31,6 @@ public class ShoppersAI : MonoBehaviour {
             }
         }
 
-        //foreach (Transform tr in transform)
-        //{
-        //    if (tr.tag == "AICart")
-        //    {
-        //        print(tr.gameObject);
-        //        shopperCart = tr.gameObject;
-        //    }
-        //}
-
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = true; 
@@ -47,13 +39,13 @@ public class ShoppersAI : MonoBehaviour {
 
         originalPos = transform.position;
         anim.SetBool("walking", true);
-       // GoToNextNode();
+        //GoToNextNode();
     }
 
     private void GoToNextNode()
     {
         agent.destination = nodes[currentNode].position;
-
+        print(++i);
         currentNode += 1;
 
         if (currentNode == nodes.Count)
