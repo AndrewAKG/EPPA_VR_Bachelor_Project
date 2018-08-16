@@ -43,7 +43,6 @@ public class CartItems : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 
