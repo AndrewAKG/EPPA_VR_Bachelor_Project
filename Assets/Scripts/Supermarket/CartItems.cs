@@ -29,7 +29,7 @@ public class CartItems : MonoBehaviour
         requiredItems.Add("Fish", false);
         requiredItems.Add("Meat", false);
         requiredItems.Add("Pizza Mozarella", false);
-        requiredItems.Add("Cheese", false);
+        //requiredItems.Add("Cheese", false);
         requiredItems.Add("Fruit", false);
         requiredItems.Add("Tee", false);
     }
@@ -67,10 +67,10 @@ public class CartItems : MonoBehaviour
            requiredItems["Cheese"] = CheckCartItem(hitColliders, "Cheese");
         }
 
-        foreach(KeyValuePair<string, bool> kvp in requiredItems)
-        {
-            print("Key: " + kvp.Key + " Value: " + kvp.Value);
-        }
+        //foreach(KeyValuePair<string, bool> kvp in requiredItems)
+        //{
+        //    print("Key: " + kvp.Key + " Value: " + kvp.Value);
+        //}
     }
 
     private void OnDrawGizmos()
