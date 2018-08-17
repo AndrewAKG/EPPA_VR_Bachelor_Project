@@ -11,12 +11,44 @@ public class CartItems : MonoBehaviour
     private bool started = false;
     private Dictionary<string, bool> requiredItems;
     private Vector3 checkingSensorOffset = new Vector3(0f, 0.6f, -0.1f);
+    private bool showAgentCanvas = false;
+    private GameObject agentCanvas;
+    private GameObject agent;
+
+    [SerializeField]
+    private AudioSource buy;
+
+    [SerializeField]
+    private AudioSource OrangeJuice;
+
+    [SerializeField]
+    private AudioSource LemonJuice;
+
+    [SerializeField]
+    private AudioSource Milk;
+
+    [SerializeField]
+    private AudioSource Meat;
+
+    [SerializeField]
+    private AudioSource Fish;
+
+    [SerializeField]
+    private AudioSource PizzaMozzarella;
+
+    [SerializeField]
+    private AudioSource Fruit;
+
+    [SerializeField]
+    private AudioSource Tee;
 
     private void Start()
     {
         requiredItems = new Dictionary<string, bool>();
         started = true;
         cartRenderer = activeCart.GetComponent<Renderer>();
+        agent = GameObject.FindGameObjectWithTag("Agent");
+        agentCanvas = GameObject.FindGameObjectWithTag("AgentCanvas");
         //print(cartRenderer.bounds.size);
         addInitialValues();
     }
@@ -28,7 +60,7 @@ public class CartItems : MonoBehaviour
         requiredItems.Add("Milk", false);
         requiredItems.Add("Fish", false);
         requiredItems.Add("Meat", false);
-        requiredItems.Add("Pizza Mozarella", false);
+        requiredItems.Add("Pizza Mozzarella", false);
         //requiredItems.Add("Cheese", false);
         requiredItems.Add("Fruit", false);
         requiredItems.Add("Tee", false);
@@ -47,11 +79,22 @@ public class CartItems : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update () {
+    private void Update () {
         checkItems(transform.position + checkingSensorOffset);
-	}
 
-    public void checkItems(Vector3 targetPos)
+        if (showAgentCanvas)
+        {
+            agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+            agent.transform.localScale = Vector3.one;
+        }
+        else
+        {
+            agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+            agent.transform.localScale = Vector3.zero;
+        }
+    }
+
+    private void checkItems(Vector3 targetPos)
     {
         var hitColliders = Physics.OverlapSphere(targetPos, 0.6f);
         if (hitColliders.Length > 0)
@@ -64,13 +107,77 @@ public class CartItems : MonoBehaviour
            requiredItems["Pizza Mozzarella"] = CheckCartItem(hitColliders, "PizzaMozzarella");
            requiredItems["Fruit"] = CheckCartItem(hitColliders, "Fruit");
            requiredItems["Tee"] = CheckCartItem(hitColliders, "Tee");
-           requiredItems["Cheese"] = CheckCartItem(hitColliders, "Cheese");
+           //requiredItems["Cheese"] = CheckCartItem(hitColliders, "Cheese");
         }
+
 
         //foreach(KeyValuePair<string, bool> kvp in requiredItems)
         //{
         //    print("Key: " + kvp.Key + " Value: " + kvp.Value);
         //}
+    }
+
+    public void CallAgent()
+    {
+        StartCoroutine(RecognizeMissingItems());
+    }
+
+    IEnumerator RecognizeMissingItems()
+    {
+        showAgentCanvas = true;
+        buy.Play();
+        yield return new WaitForSeconds(1.5f);
+
+        if (!requiredItems["Orange Juice"])
+        {
+            OrangeJuice.Play();
+            yield return new WaitForSeconds(1.6f);
+        }
+
+        if (!requiredItems["Lemon Juice"])
+        {
+            LemonJuice.Play();
+            yield return new WaitForSeconds(1.2f);
+        }
+
+        if (!requiredItems["Milk"])
+        {
+            Milk.Play();
+            yield return new WaitForSeconds(1);
+        }
+
+        if (!requiredItems["Fish"])
+        {
+            Fish.Play();
+            yield return new WaitForSeconds(1);
+        }
+
+        if (!requiredItems["Pizza Mozzarella"])
+        {
+            PizzaMozzarella.Play();
+            yield return new WaitForSeconds(1.6f);
+        }
+
+        if (!requiredItems["Meat"])
+        {
+            Meat.Play();
+            yield return new WaitForSeconds(1);
+        }
+
+        if (!requiredItems["Tee"])
+        {
+            Tee.Play();
+            yield return new WaitForSeconds(1);
+        }
+
+        if (!requiredItems["Fruit"])
+        {
+            Fruit.Play();
+            yield return new WaitForSeconds(1);
+        }
+
+        yield return new WaitForSeconds(1);
+        showAgentCanvas = false;
     }
 
     private void OnDrawGizmos()

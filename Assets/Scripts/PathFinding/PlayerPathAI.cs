@@ -47,7 +47,18 @@ public class PlayerPathAI : MonoBehaviour {
         {
             GoFindPath();
         }
-            
+
+        if (showAgentCanvas)
+        {
+            agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+            agent.transform.localScale = Vector3.one;
+        }
+        else
+        {
+            agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+            agent.transform.localScale = Vector3.zero;
+        }
+
         //RaycastHit hit;
         //Vector3 fwd = player.transform.TransformDirection(Vector3.forward);
         //sensorOrigin = player.transform.position;
@@ -100,7 +111,7 @@ public class PlayerPathAI : MonoBehaviour {
     {
         path = newPath;
         Vector3 destinationHeading = target.position - player.position;
-        Vector3 nearestNodeHeading = path[0] - player.position;
+        //Vector3 nearestNodeHeading = path[0] - player.position;
         int destinationDirection = AngleDir(player.forward, destinationHeading, player.up);
         //int nearestNodeDirection = AngleDir(player.forward, nearestNodeHeading, player.up);
         showAgentCanvas = true;
