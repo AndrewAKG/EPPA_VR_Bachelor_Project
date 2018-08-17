@@ -82,16 +82,16 @@ public class CartItems : MonoBehaviour
     private void Update () {
         checkItems(transform.position + checkingSensorOffset);
 
-        if (showAgentCanvas)
-        {
-            agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
-            agent.transform.localScale = Vector3.one;
-        }
-        else
-        {
-            agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
-            agent.transform.localScale = Vector3.zero;
-        }
+        //if (showAgentCanvas)
+        //{
+        //    agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+        //    agent.transform.localScale = Vector3.one;
+        //}
+        //else
+        //{
+        //    agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+        //    agent.transform.localScale = Vector3.zero;
+        //}
     }
 
     private void checkItems(Vector3 targetPos)
