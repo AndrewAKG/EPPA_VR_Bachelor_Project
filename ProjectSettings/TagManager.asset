@@ -47,6 +47,7 @@ TagManager:
   - PizzaMozzarella
   - CheesePizza
   - Tee
+  - MobileCanvas
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,10 @@ public class CartItems : MonoBehaviour
     private bool showAgentCanvas = false;
     private GameObject agentCanvas;
     private GameObject agent;
+    private GameObject mobileCanvas;
+    private bool showMobileCanvas = false;
+    private int itemsSoFar = 0;
+    private bool distractOnce = false;
 
     [SerializeField]
     private AudioSource buy;
@@ -42,6 +46,9 @@ public class CartItems : MonoBehaviour
     [SerializeField]
     private AudioSource Tee;
 
+    [SerializeField]
+    private AudioSource MobileRinging;
+
     private void Start()
     {
         requiredItems = new Dictionary<string, bool>();
@@ -49,6 +56,7 @@ public class CartItems : MonoBehaviour
         cartRenderer = activeCart.GetComponent<Renderer>();
         agent = GameObject.FindGameObjectWithTag("Agent");
         agentCanvas = GameObject.FindGameObjectWithTag("AgentCanvas");
+        agentCanvas = GameObject.FindGameObjectWithTag("MobileCanvas");
         //print(cartRenderer.bounds.size);
         addInitialValues();
     }
@@ -61,7 +69,6 @@ public class CartItems : MonoBehaviour
         requiredItems.Add("Fish", false);
         requiredItems.Add("Meat", false);
         requiredItems.Add("Pizza Mozzarella", false);
-        //requiredItems.Add("Cheese", false);
         requiredItems.Add("Fruit", false);
         requiredItems.Add("Tee", false);
     }
@@ -92,6 +99,27 @@ public class CartItems : MonoBehaviour
         //    agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
         //    agent.transform.localScale = Vector3.zero;
         //}
+
+        //if (showMobileCanvas)
+        //{
+        //    mobileCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+        //}
+        //else
+        //{
+        //    mobileCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+        //}
+    }
+
+    private void MobileDistraction()
+    {
+        MobileRinging.Play();
+        showMobileCanvas = true;
+    }
+
+    public void EndDistraction()
+    {
+        MobileRinging.Stop();
+        showMobileCanvas = false;
     }
 
     private void checkItems(Vector3 targetPos)
@@ -107,14 +135,31 @@ public class CartItems : MonoBehaviour
            requiredItems["Pizza Mozzarella"] = CheckCartItem(hitColliders, "PizzaMozzarella");
            requiredItems["Fruit"] = CheckCartItem(hitColliders, "Fruit");
            requiredItems["Tee"] = CheckCartItem(hitColliders, "Tee");
-           //requiredItems["Cheese"] = CheckCartItem(hitColliders, "Cheese");
         }
 
+        foreach (KeyValuePair<string, bool> kvp in requiredItems)
+        {
+            if (kvp.Value)
+            {
+                itemsSoFar++;
+            }
+        }
 
-        //foreach(KeyValuePair<string, bool> kvp in requiredItems)
-        //{
-        //    print("Key: " + kvp.Key + " Value: " + kvp.Value);
-        //}
+        if (!distractOnce)
+        {
+            if(itemsSoFar >= 4)
+            {
+                MobileDistraction();
+                distractOnce = true;
+            }
+        }
+
+        if(itemsSoFar == 8)
+        {
+            print("Done");
+        }
+
+        itemsSoFar = 0;
     }
 
     public void CallAgent()
