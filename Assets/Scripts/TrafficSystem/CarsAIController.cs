@@ -83,7 +83,7 @@ public class CarsAIController : MonoBehaviour {
 
                 float angle = Vector3.Angle(collisionObject.transform.forward, transform.position - collisionObject.transform.position);
                 //print(angle);
-                bool frontFacing = angle <= 20;
+                bool frontFacing = (angle <= 10);
 
                 if ((trafficState == 1 || trafficState == 2) && frontFacing)
                 {
@@ -124,7 +124,7 @@ public class CarsAIController : MonoBehaviour {
 
                 float angle = Vector3.Angle(collisionObject.transform.forward, transform.position - collisionObject.transform.position);
                 //print(angle);
-                bool frontFacing = angle <= 20;
+                bool frontFacing = (angle <= 10);
 
                 if ((trafficState == 1 || trafficState == 2) && frontFacing)
                 {
@@ -165,7 +165,7 @@ public class CarsAIController : MonoBehaviour {
 
                 float angle = Vector3.Angle(collisionObject.transform.forward, transform.position - collisionObject.transform.position);
                 //print(angle);
-                bool frontFacing = angle <= 20;
+                bool frontFacing = (angle <= 10);
 
                 if ((trafficState == 1 || trafficState == 2) && frontFacing)
                 {

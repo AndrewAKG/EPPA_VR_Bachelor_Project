@@ -48,6 +48,7 @@ TagManager:
   - CheesePizza
   - Tee
   - MobileCanvas
+  - End
   layers:
   - Default
   - TransparentFX

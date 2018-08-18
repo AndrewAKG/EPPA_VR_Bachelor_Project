@@ -99,17 +99,17 @@ public class MapGrid : MonoBehaviour {
         //}
         //else
         //{
-            if (grid != null)
-            {
-                foreach (Node n in grid)
-                {
-                    Gizmos.color = (n.walkable) ? Color.white : Color.red;
-                    if (path != null)
-                        if (path.Contains(n))
-                            Gizmos.color = Color.black;
-                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
-                }
-            }
+            //if (grid != null)
+            //{
+            //    foreach (Node n in grid)
+            //    {
+            //        Gizmos.color = (n.walkable) ? Color.white : Color.red;
+            //        if (path != null)
+            //            if (path.Contains(n))
+            //                Gizmos.color = Color.black;
+            //        Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+            //    }
+            //}
        // }
     }
 }

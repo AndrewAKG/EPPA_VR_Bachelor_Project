@@ -53,7 +53,7 @@ public class PedestrianAI : MonoBehaviour {
         currentNode = Random.Range(0, points.Count);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         RaycastHit hit;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -88,53 +88,53 @@ public class PedestrianAI : MonoBehaviour {
             }
         }
 
-        if (Physics.Raycast(sensorOrigin, Quaternion.AngleAxis(frontSensorAngle, transform.up) * transform.forward, out hit, 2f))
-        {
-            if (hit.collider.gameObject.CompareTag("TLSPC"))
-            {
-                GameObject collisionObject = hit.collider.gameObject;
-                GameObject collisionObjectParent = collisionObject.transform.parent.gameObject;
-                PedestrianLight light = collisionObjectParent.GetComponent<PedestrianLight>();
-                int trafficState = light.getState();
+        //if (Physics.Raycast(sensorOrigin, Quaternion.AngleAxis(frontSensorAngle, transform.up) * transform.forward, out hit, 2f))
+        //{
+        //    if (hit.collider.gameObject.CompareTag("TLSPC"))
+        //    {
+        //        GameObject collisionObject = hit.collider.gameObject;
+        //        GameObject collisionObjectParent = collisionObject.transform.parent.gameObject;
+        //        PedestrianLight light = collisionObjectParent.GetComponent<PedestrianLight>();
+        //        int trafficState = light.getState();
 
-                if (trafficState == 1)
-                {
-                    Debug.DrawLine(sensorOrigin, hit.point);
-                    anim.SetBool("walking", false);
-                    agent.isStopped = true;
-                    pedestrianStateChanged = true;
-                }
-            }
-        }
+        //        if (trafficState == 1)
+        //        {
+        //            Debug.DrawLine(sensorOrigin, hit.point);
+        //            anim.SetBool("walking", false);
+        //            agent.isStopped = true;
+        //            pedestrianStateChanged = true;
+        //        }
+        //    }
+        //}
 
-        if (Physics.Raycast(sensorOrigin, Quaternion.AngleAxis(-frontSensorAngle, transform.up) * transform.forward, out hit, 2f))
-        {
-            if (hit.collider.gameObject.CompareTag("TLSPC"))
-            {
-                GameObject collisionObject = hit.collider.gameObject;
-                GameObject collisionObjectParent = collisionObject.transform.parent.gameObject;
-                PedestrianLight light = collisionObjectParent.GetComponent<PedestrianLight>();
-                int trafficState = light.getState();
+        //if (Physics.Raycast(sensorOrigin, Quaternion.AngleAxis(-frontSensorAngle, transform.up) * transform.forward, out hit, 2f))
+        //{
+        //    if (hit.collider.gameObject.CompareTag("TLSPC"))
+        //    {
+        //        GameObject collisionObject = hit.collider.gameObject;
+        //        GameObject collisionObjectParent = collisionObject.transform.parent.gameObject;
+        //        PedestrianLight light = collisionObjectParent.GetComponent<PedestrianLight>();
+        //        int trafficState = light.getState();
 
-                if (trafficState == 1)
-                {
-                    Debug.DrawLine(sensorOrigin, hit.point);
-                    anim.SetBool("walking", false);
-                    agent.isStopped = true;
-                    pedestrianStateChanged = true;
-                }
-            }
-        }
-
-        if (!agent.pathPending && agent.remainingDistance < 0.5f && !pedestrianStateChanged)
-        {
-            GotoNextPoint();
-        }
+        //        if (trafficState == 1)
+        //        {
+        //            Debug.DrawLine(sensorOrigin, hit.point);
+        //            anim.SetBool("walking", false);
+        //            agent.isStopped = true;
+        //            pedestrianStateChanged = true;
+        //        }
+        //    }
+        //}
 
         if (!pedestrianStateChanged && agent.isStopped)
         {
             agent.isStopped = false;
             anim.SetBool("walking", true);
+        }
+
+        if (!agent.pathPending && agent.remainingDistance < 0.5f && !pedestrianStateChanged)
+        {
+            GotoNextPoint();
         }
 
         pedestrianStateChanged = false;

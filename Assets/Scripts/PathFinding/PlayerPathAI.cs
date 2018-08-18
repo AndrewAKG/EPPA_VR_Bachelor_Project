@@ -48,16 +48,16 @@ public class PlayerPathAI : MonoBehaviour {
             GoFindPath();
         }
 
-        if (showAgentCanvas)
-        {
-            agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
-            agent.transform.localScale = Vector3.one;
-        }
-        else
-        {
-            agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
-            agent.transform.localScale = Vector3.zero;
-        }
+        //if (showAgentCanvas)
+        //{
+        //    agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+        //    agent.transform.localScale = Vector3.one;
+        //}
+        //else
+        //{
+        //    agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+        //    agent.transform.localScale = Vector3.zero;
+        //}
 
         //RaycastHit hit;
         //Vector3 fwd = player.transform.TransformDirection(Vector3.forward);

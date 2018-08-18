@@ -68,7 +68,7 @@ public class AICarsSpawner : MonoBehaviour {
 
     public bool checkIfPosEmpty(Vector3 targetPos)
     {
-        var hitColliders = Physics.OverlapSphere(targetPos, 6.1f);
+        var hitColliders = Physics.OverlapSphere(targetPos, 5f);
         if (hitColliders.Length > 0)
         {
             foreach(Collider hitCollider in hitColliders)
@@ -87,7 +87,7 @@ public class AICarsSpawner : MonoBehaviour {
         if (started)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(spawningPoints[randomIndex].position, 6.1f);
+            Gizmos.DrawWireSphere(spawningPoints[randomIndex].position, 5f);
         }
     }
 }
