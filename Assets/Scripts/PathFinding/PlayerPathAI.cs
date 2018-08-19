@@ -158,11 +158,11 @@ public class PlayerPathAI : MonoBehaviour {
         float dir = Vector3.Dot(perp, up);
         print(dir);
 
-        if (dir > 0f)
+        if (dir > 35f)
         {
             return 1;
         }
-        else if (dir < 0f)
+        else if (dir < -15f)
         {
             return -1;
         }

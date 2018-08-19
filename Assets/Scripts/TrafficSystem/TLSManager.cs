@@ -12,12 +12,17 @@ public class TLSManager : MonoBehaviour {
     private int greenSeconds = 20;
     private int pedestrianSeconds = 10;
 
-    void Start()
+    private void Awake()
     {
         TLSLights = GameObject.FindGameObjectsWithTag("TLS");
         TLS2Lights = GameObject.FindGameObjectsWithTag("TLS2");
         TLSPLights = GameObject.FindGameObjectsWithTag("TLSP");
         StartCoroutine(ControlTraffic());
+    }
+
+    void Start()
+    {
+        
     }
 
     IEnumerator ControlTraffic()
@@ -27,22 +32,22 @@ public class TLSManager : MonoBehaviour {
             UpdateTrafficLights(TLSLights, 1);
             UpdateTrafficLights(TLS2Lights, 3);
             UpdatePedestrianLights(TLSPLights, 1);
-            yield return new WaitForSeconds(redSeconds);
+            yield return new WaitForSecondsRealtime(redSeconds);
 
             UpdateTrafficLights(TLSLights, 2);
             UpdateTrafficLights(TLS2Lights, 2);
             UpdatePedestrianLights(TLSPLights, 1);
-            yield return new WaitForSeconds(yellowSeconds);
+            yield return new WaitForSecondsRealtime(yellowSeconds);
 
             UpdateTrafficLights(TLSLights, 3);
             UpdateTrafficLights(TLS2Lights, 1);
             UpdatePedestrianLights(TLSPLights, 1);
-            yield return new WaitForSeconds(greenSeconds);
+            yield return new WaitForSecondsRealtime(greenSeconds);
 
             UpdateTrafficLights(TLSLights, 1);
             UpdateTrafficLights(TLS2Lights, 1);
             UpdatePedestrianLights(TLSPLights, 2);
-            yield return new WaitForSeconds(pedestrianSeconds);
+            yield return new WaitForSecondsRealtime(pedestrianSeconds);
         }
     }
 
@@ -64,8 +69,4 @@ public class TLSManager : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
-    void Update () { 
-        
-    }
 }
