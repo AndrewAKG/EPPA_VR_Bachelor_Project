@@ -20,11 +20,6 @@ public class TLSManager : MonoBehaviour {
         StartCoroutine(ControlTraffic());
     }
 
-    void Start()
-    {
-        
-    }
-
     IEnumerator ControlTraffic()
     {
         while (true)

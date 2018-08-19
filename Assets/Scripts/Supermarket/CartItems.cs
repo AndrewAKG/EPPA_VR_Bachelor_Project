@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CartItems : MonoBehaviour
 {
@@ -156,7 +157,8 @@ public class CartItems : MonoBehaviour
 
         if(itemsSoFar == 8)
         {
-            print("Done");
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            SceneManager.LoadScene(nextSceneIndex);
         }
 
         itemsSoFar = 0;
