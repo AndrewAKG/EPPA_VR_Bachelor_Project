@@ -86,6 +86,14 @@ public class PedestrianAI : MonoBehaviour {
                 agent.isStopped = true;
                 pedestrianStateChanged = true;
             }
+
+            if (hit.collider.gameObject.CompareTag("AIPedestrian"))
+            {
+                Debug.DrawLine(sensorOrigin, hit.point);
+                anim.SetBool("walking", false);
+                agent.isStopped = true;
+                pedestrianStateChanged = true;
+            }
         }
 
         //if (Physics.Raycast(sensorOrigin, Quaternion.AngleAxis(frontSensorAngle, transform.up) * transform.forward, out hit, 2f))

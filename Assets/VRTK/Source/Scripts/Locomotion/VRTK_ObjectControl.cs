@@ -115,7 +115,7 @@ namespace VRTK
         public virtual void OnYAxisChanged(ObjectControlEventArgs e)
         {
             if (YAxisChanged != null)
-            {
+            {    
                 YAxisChanged(this, e);
             }
         }

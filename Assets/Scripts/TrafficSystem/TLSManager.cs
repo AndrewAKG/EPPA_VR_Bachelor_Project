@@ -10,9 +10,9 @@ public class TLSManager : MonoBehaviour {
     private int redSeconds = 20;
     private int yellowSeconds = 3;
     private int greenSeconds = 20;
-    private int pedestrianSeconds = 10;
+    private int pedestrianSeconds = 15;
 
-    private void Awake()
+    private void Start()
     {
         TLSLights = GameObject.FindGameObjectsWithTag("TLS");
         TLS2Lights = GameObject.FindGameObjectsWithTag("TLS2");
@@ -27,22 +27,22 @@ public class TLSManager : MonoBehaviour {
             UpdateTrafficLights(TLSLights, 1);
             UpdateTrafficLights(TLS2Lights, 3);
             UpdatePedestrianLights(TLSPLights, 1);
-            yield return new WaitForSecondsRealtime(redSeconds);
+            yield return new WaitForSeconds(redSeconds);
 
             UpdateTrafficLights(TLSLights, 2);
             UpdateTrafficLights(TLS2Lights, 2);
             UpdatePedestrianLights(TLSPLights, 1);
-            yield return new WaitForSecondsRealtime(yellowSeconds);
+            yield return new WaitForSeconds(yellowSeconds);
 
             UpdateTrafficLights(TLSLights, 3);
             UpdateTrafficLights(TLS2Lights, 1);
             UpdatePedestrianLights(TLSPLights, 1);
-            yield return new WaitForSecondsRealtime(greenSeconds);
+            yield return new WaitForSeconds(greenSeconds);
 
             UpdateTrafficLights(TLSLights, 1);
             UpdateTrafficLights(TLS2Lights, 1);
             UpdatePedestrianLights(TLSPLights, 2);
-            yield return new WaitForSecondsRealtime(pedestrianSeconds);
+            yield return new WaitForSeconds(pedestrianSeconds);
         }
     }
 

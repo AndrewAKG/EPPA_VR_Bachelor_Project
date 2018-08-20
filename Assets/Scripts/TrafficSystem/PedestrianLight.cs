@@ -7,7 +7,7 @@ public class PedestrianLight : MonoBehaviour {
     private Renderer rend;
     Material m_red;
     Material m_green;
-    private int state = 1;
+    private int state = 0;
 
     public int getState()
     {
@@ -33,8 +33,12 @@ public class PedestrianLight : MonoBehaviour {
         switch (state)
         {
             case 1: rend.material = m_red; break;
-            case 2: rend.material = m_green; break;
-            default: rend.material = m_red; break;
+            case 2:
+                print("GREEN");
+                rend.material = m_green; break;
+            default:
+                print("default");
+                rend.material = m_red; break;
         }
     }
 }

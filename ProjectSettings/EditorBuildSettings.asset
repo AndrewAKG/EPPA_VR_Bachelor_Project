@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Supermarket.unity
     guid: e8a38ce024bda0649bc6f5f575f35bd3
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: cbf736592d8259348b471915ba74d6cc
   m_configObjects: {}

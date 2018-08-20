@@ -49,6 +49,9 @@ TagManager:
   - Tee
   - MobileCanvas
   - End
+  - Agent2
+  - MobileButton
+  - MobileImage
   layers:
   - Default
   - TransparentFX

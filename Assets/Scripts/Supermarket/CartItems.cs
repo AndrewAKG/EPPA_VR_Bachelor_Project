@@ -16,6 +16,7 @@ public class CartItems : MonoBehaviour
     private GameObject agentCanvas;
     private GameObject agent;
     private GameObject mobileCanvas;
+    private GameObject mobileImage;
     private bool showMobileCanvas = false;
     private int itemsSoFar = 0;
     private bool distractOnce = false;
@@ -56,8 +57,9 @@ public class CartItems : MonoBehaviour
         started = true;
         cartRenderer = activeCart.GetComponent<Renderer>();
         agent = GameObject.FindGameObjectWithTag("Agent");
+        mobileImage = GameObject.FindGameObjectWithTag("MobileImage");
         agentCanvas = GameObject.FindGameObjectWithTag("AgentCanvas");
-        agentCanvas = GameObject.FindGameObjectWithTag("MobileCanvas");
+        mobileCanvas = GameObject.FindGameObjectWithTag("MobileCanvas");
         //print(cartRenderer.bounds.size);
         addInitialValues();
     }
@@ -90,25 +92,29 @@ public class CartItems : MonoBehaviour
     private void Update () {
         checkItems(transform.position + checkingSensorOffset);
 
-        //if (showAgentCanvas)
-        //{
-        //    agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
-        //    agent.transform.localScale = Vector3.one;
-        //}
-        //else
-        //{
-        //    agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
-        //    agent.transform.localScale = Vector3.zero;
-        //}
+        if (showAgentCanvas)
+        {
+            agent.SetActive(true);
+            //agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+            //agent.transform.localScale = Vector3.one;
+        }
+        else
+        {
+            agent.SetActive(false);
+            //agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+            //agent.transform.localScale = Vector3.zero;
+        }
 
-        //if (showMobileCanvas)
-        //{
-        //    mobileCanvas.GetComponent<CanvasGroup>().alpha = 1f;
-        //}
-        //else
-        //{
-        //    mobileCanvas.GetComponent<CanvasGroup>().alpha = 0f;
-        //}
+        if (showMobileCanvas)
+        {
+            mobileImage.SetActive(true);
+            //mobileCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+        }
+        else
+        {
+            mobileImage.SetActive(false);
+            //mobileCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+        }
     }
 
     private void MobileDistraction()
