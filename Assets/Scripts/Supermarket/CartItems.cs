@@ -94,15 +94,13 @@ public class CartItems : MonoBehaviour
 
         if (showAgentCanvas)
         {
-            agent.SetActive(true);
-            //agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
-            //agent.transform.localScale = Vector3.one;
+            agentCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+            agent.transform.localScale = Vector3.one;
         }
         else
         {
-            agent.SetActive(false);
-            //agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
-            //agent.transform.localScale = Vector3.zero;
+            agentCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+            agent.transform.localScale = Vector3.zero;
         }
 
         if (showMobileCanvas)
@@ -178,6 +176,7 @@ public class CartItems : MonoBehaviour
     IEnumerator RecognizeMissingItems()
     {
         showAgentCanvas = true;
+        agent.GetComponent<Animator>().SetBool("Talk", true);
         buy.Play();
         yield return new WaitForSeconds(1.5f);
 
@@ -230,6 +229,7 @@ public class CartItems : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
+        agent.GetComponent<Animator>().SetBool("Talk", false);
         showAgentCanvas = false;
     }
 

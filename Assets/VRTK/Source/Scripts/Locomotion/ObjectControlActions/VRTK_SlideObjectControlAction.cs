@@ -47,9 +47,17 @@ namespace VRTK
         protected float currentSpeed = 0f;
         public bool isWalking = false;
         public Animator anim;
+        public bool playerControlled = false;
 
         protected override void Process(GameObject controlledGameObject, Transform directionDevice, Vector3 axisDirection, float axis, float deadzone, bool currentlyFalling, bool modifierActive)
         {
+            if (controlledGameObject.CompareTag("Player"))
+            {
+                playerControlled = true;
+            } else
+            {
+                playerControlled = false;
+            }
             anim = controlledGameObject.GetComponent<Animator>();
             currentSpeed = CalculateSpeed(axis, currentlyFalling, modifierActive);
             Move(controlledGameObject, directionDevice, axisDirection);
@@ -66,21 +74,27 @@ namespace VRTK
             float speed = currentSpeed;
             if (inputValue != 0f)
             {
-                if (!isWalking)
+                if (playerControlled)
                 {
-                    isWalking = true;
-                    anim.Play("M_walk");
+                    if (!isWalking)
+                    {
+                        isWalking = true;
+                        anim.Play("M_walk");
+                    }
                 }
                 speed = (maximumSpeed * inputValue);
                 speed = (modifierActive ? (speed * speedMultiplier) : speed);
             }
             else
             {
-                if (isWalking)
+                if (playerControlled)
                 {
-                    anim.Play("M_idle1");
+                    if (isWalking)
+                    {
+                        anim.Play("M_idle1");
+                    }
+                    isWalking = false;
                 }
-                isWalking = false;
                 speed = Decelerate(speed, currentlyFalling);
             }
 
