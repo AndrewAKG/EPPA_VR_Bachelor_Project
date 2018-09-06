@@ -45,9 +45,12 @@ namespace VRTK
         public VRTK_BodyPhysics bodyPhysics;
 
         protected float currentSpeed = 0f;
+        public bool isWalking = false;
+        public Animator anim;
 
         protected override void Process(GameObject controlledGameObject, Transform directionDevice, Vector3 axisDirection, float axis, float deadzone, bool currentlyFalling, bool modifierActive)
         {
+            anim = controlledGameObject.GetComponent<Animator>();
             currentSpeed = CalculateSpeed(axis, currentlyFalling, modifierActive);
             Move(controlledGameObject, directionDevice, axisDirection);
         }
@@ -63,11 +66,21 @@ namespace VRTK
             float speed = currentSpeed;
             if (inputValue != 0f)
             {
+                if (!isWalking)
+                {
+                    isWalking = true;
+                    anim.Play("M_walk");
+                }
                 speed = (maximumSpeed * inputValue);
                 speed = (modifierActive ? (speed * speedMultiplier) : speed);
             }
             else
             {
+                if (isWalking)
+                {
+                    anim.Play("M_idle1");
+                }
+                isWalking = false;
                 speed = Decelerate(speed, currentlyFalling);
             }
 
