@@ -31,7 +31,7 @@ public class AICarsSpawner : MonoBehaviour {
 
     IEnumerator SpawnCars()
     {
-        while(carsCount < 50)
+        while(carsCount < 1)
         {
             InstantiateCar();
             yield return new WaitForSeconds(3);

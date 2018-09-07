@@ -34,10 +34,8 @@ public class PedestrianLight : MonoBehaviour {
         {
             case 1: rend.material = m_red; break;
             case 2:
-                print("GREEN"); 
                 rend.material = m_green; break;
             default:
-                print("default");
                 rend.material = m_red; break;
         }
     }

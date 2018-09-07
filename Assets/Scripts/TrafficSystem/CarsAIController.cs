@@ -82,7 +82,7 @@ public class CarsAIController : MonoBehaviour {
                 int trafficState = light.getState();
 
                 float angle = Vector3.Angle(collisionObject.transform.forward, transform.position - collisionObject.transform.position);
-                //print(angle);
+                print(angle);
                 bool frontFacing = (angle <= 10);
 
                 if ((trafficState == 1 || trafficState == 2) && frontFacing)
@@ -123,10 +123,8 @@ public class CarsAIController : MonoBehaviour {
                 int trafficState = light.getState();
 
                 float angle = Vector3.Angle(collisionObject.transform.forward, transform.position - collisionObject.transform.position);
-                //print(angle);
-                bool frontFacing = (angle <= 10);
 
-                if ((trafficState == 1 || trafficState == 2) && frontFacing)
+                if ((trafficState == 1 || trafficState == 2))
                 {
                     isBraking = true;
                     carStateChanged = true;
@@ -165,9 +163,9 @@ public class CarsAIController : MonoBehaviour {
 
                 float angle = Vector3.Angle(collisionObject.transform.forward, transform.position - collisionObject.transform.position);
                 //print(angle);
-                bool frontFacing = (angle <= 10);
+                //bool frontFacing = (angle <= 10);
 
-                if ((trafficState == 1 || trafficState == 2) && frontFacing)
+                if ((trafficState == 1 || trafficState == 2))
                 {
                     isBraking = true;
                     carStateChanged = true;

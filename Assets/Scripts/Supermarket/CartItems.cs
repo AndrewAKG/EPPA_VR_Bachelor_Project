@@ -105,13 +105,13 @@ public class CartItems : MonoBehaviour
 
         if (showMobileCanvas)
         {
-            mobileImage.SetActive(true);
-            //mobileCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+            //mobileImage.SetActive(true);
+            mobileCanvas.GetComponent<CanvasGroup>().alpha = 1f;
         }
         else
         {
-            mobileImage.SetActive(false);
-            //mobileCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+            //mobileImage.SetActive(false);
+            mobileCanvas.GetComponent<CanvasGroup>().alpha = 0f;
         }
     }
 
